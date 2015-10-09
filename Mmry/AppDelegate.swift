@@ -6,17 +6,29 @@
 //  Copyright © 2015 Beckman Creative. All rights reserved.
 //
 
+// http://www.raywenderlich.com/92428/background-modes-ios-swift-tutorial
+// https://developer.apple.com/library/mac/recipes/xcode_help-scheme_editor/Articles/EnablingBackgroundContentFetching.html
+
 import UIKit
+import Photos
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var time: NSDate?
+    var photoLibrary: PHPhotoLibrary?
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
         return true
+    }
+    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        fetch {
+            completionHandler(.NewData)
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -40,7 +52,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    //http://stackoverflow.com/questions/8867496/get-last-image-from-photos-app
+    
+    func fetch(completion: () -> Void) {
+        print("fetch()")
+        time = NSDate()
+        photoLibrary = PHPhotoLibrary.sharedPhotoLibrary()
+        
+        completion()
+    }
+    
 
 }
 
