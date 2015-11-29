@@ -14,7 +14,8 @@ class ScreenshotsCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     override init() {
         super.init()
-        self.minimumInteritemSpacing = 10000;
+        self.minimumInteritemSpacing = 10000
+        self.itemSize = CGSizeMake(200, 600)
     }
 
     required init?(coder aDecoder: NSCoder) {

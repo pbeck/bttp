@@ -29,6 +29,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate {
         var collectionViewLayout = ScreenshotsCollectionViewFlowLayout()
         collectionView?.setCollectionViewLayout(collectionViewLayout, animated: false)
         collectionViewLayout.scrollDirection = .Horizontal
+        collectionView?.showsHorizontalScrollIndicator = false
 
         self.collectionView?.registerClass(ScreenshotCell.self, forCellWithReuseIdentifier:"CELL")
         

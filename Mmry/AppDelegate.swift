@@ -6,6 +6,8 @@
 //  Copyright © 2015 Beckman Creative. All rights reserved.
 //
 
+// http://www.swifttoolbox.io
+
 // http://www.raywenderlich.com/92428/background-modes-ios-swift-tutorial
 // https://developer.apple.com/library/mac/recipes/xcode_help-scheme_editor/Articles/EnablingBackgroundContentFetching.html
 

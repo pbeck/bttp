@@ -19,6 +19,7 @@ class ScreenshotCell: UICollectionViewCell {
         self.label = UILabel.init(frame: CGRectMake(0, 0, frame.size.width, frame.size.height))
         self.label!.font = UIFont.boldSystemFontOfSize(60)
         self.label!.textColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.greenColor()
         
         self.contentView.addSubview(self.label!)
         /*
