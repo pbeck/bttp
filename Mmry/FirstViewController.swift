@@ -9,6 +9,23 @@
 import UIKit
 import Photos
 
+// http://stackoverflow.com/questions/29779128/how-to-make-a-random-background-color-with-swift
+func randomCGFloat() -> CGFloat {
+    return CGFloat(arc4random()) / CGFloat(UInt32.max)
+}
+
+extension UIColor {
+    static func randomColor() -> UIColor {
+        let r = randomCGFloat()
+        let g = randomCGFloat()
+        let b = randomCGFloat()
+        
+        // If you wanted a random alpha, just create another
+        // random number for that too.
+        return UIColor(red: r, green: g, blue: b, alpha: 1.0)
+    }
+}
+
 class FirstViewController: UIViewController, UICollectionViewDelegate {
 
     struct BCShot {
@@ -26,12 +43,20 @@ class FirstViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var collectionViewLayout = ScreenshotsCollectionViewFlowLayout()
+        let collectionViewLayout = ScreenshotsCollectionViewFlowLayout()
         collectionView?.setCollectionViewLayout(collectionViewLayout, animated: false)
         collectionViewLayout.scrollDirection = .Horizontal
         collectionView?.showsHorizontalScrollIndicator = false
+        collectionView?.showsVerticalScrollIndicator = false
+        //collectionView?.backgroundColor = UIColor.redColor()
+        collectionView?.pagingEnabled = true
 
         self.collectionView?.registerClass(ScreenshotCell.self, forCellWithReuseIdentifier:"CELL")
+        
+        
+        self.collectionView?.scrollToItemAtIndexPath(NSIndexPath(forItem: 9, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Right, animated: false)
+        //[self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.theData.count - 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
+       
         
         updateUI()
         
@@ -150,38 +175,82 @@ class FirstViewController: UIViewController, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
-            return 120;
+            return 10;
     }
     
     func collectionView(_ collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CELL", forIndexPath: indexPath) as! ScreenshotCell
+            cell.setScreenshot()
             cell.label?.text = "\(indexPath.row)"
+            //cell.backgroundColor = UIColor.randomColor()
+            //cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, self.collectionView!.frame.height, self.collectionView!.frame.height);
             return cell
             
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        var cell = collectionView.cellForItemAtIndexPath(indexPath)
-        print("Tocuhed \(cell) at \(indexPath)")
+        //var cell = collectionView.cellForItemAtIndexPath(indexPath)
+        //print("Tocuhed \(cell) at \(indexPath)")
+        
+        let alertController = UIAlertController(title: "iOScreator", message:
+            "Hello, world!", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            
+            //let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CELL", forIndexPath: indexPath) as! ScreenshotCell
+            //print(self.collectionView!.frame.height)
+            return CGSizeMake(400, self.collectionView!.frame.height - 160)
+    }
     /*
-    - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-    {
-    return 1;
+    
+    func collectionView(_ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+            return UIEdgeInsetsMake(10, 10, 20, 10)
+        
     }
     
-    -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 20;
+    func collectionView(_ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+            return 100
     }
+    */
     
-    -(CustomCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    // http://stackoverflow.com/questions/13228600/uicollectionview-align-logic-missing-in-horizontal-paging-scrollview
+    /*
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+        withVelocity velocity: CGPoint,
+        targetContentOffset targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+            var pageWidth:Float = 300
     
-    [cell setTitle:[NSString stringWithFormat:@"%d", indexPath.row]];
-    return cell;
+            var currentOffset = scrollView.contentOffset.x;
+            var targetOffset = targetContentOffset.memory.x
+            var newTargetOffset = 0;
+    
+            if (targetOffset > currentOffset) {
+                newTargetOffset = Int(ceilf(Float(currentOffset) / pageWidth ) * pageWidth)
+            } else {
+                newTargetOffset = Int(floorf(Float(currentOffset) / pageWidth) * pageWidth)
+            }
+    
+            if (newTargetOffset < 0) {
+                newTargetOffset = 0;
+            } else if (newTargetOffset > Int(scrollView.contentSize.width)) {
+                newTargetOffset = Int(scrollView.contentSize.width)
+            }
+    
+            targetContentOffset.memory.x = currentOffset;
+            scrollView.setContentOffset(CGPointMake(CGFloat(newTargetOffset), 0), animated:true)
     }
     */
 }

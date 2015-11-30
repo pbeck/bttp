@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var locationManager: CLLocationManager!
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        /*
         locationManager = CLLocationManager()
         locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         locationManager?.delegate = self
@@ -44,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedAlways {
             CLLocationManager().requestAlwaysAuthorization()
         }
+        */
         application.registerUserNotificationSettings(
             UIUserNotificationSettings(
                 forTypes: [.Alert, .Badge, .Sound],
@@ -51,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         return true
     }
     
+    /*
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
             print("---")
             print("Background fetch")
@@ -72,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             completionHandler(.NewData)
             */
     }
+    */
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -99,6 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         //
     }
     
+    /*
     func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
             print("Heading changed")
             if let tabBarController = UIApplication.sharedApplication().windows[0].rootViewController as? UITabBarController,
@@ -137,5 +142,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 }
         }
     }
+    */
 }
 

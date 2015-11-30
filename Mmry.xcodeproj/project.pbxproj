@@ -165,10 +165,10 @@
 			children = (
 				78979C9D1BC80882003F86BB /* AppDelegate.swift */,
 				78979C9F1BC80882003F86BB /* FirstViewController.swift */,
-				663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */,
 				78979CA11BC80882003F86BB /* SecondViewController.swift */,
-				78979CA31BC80882003F86BB /* Main.storyboard */,
 				663C6DFF1C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift */,
+				663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */,
+				78979CA31BC80882003F86BB /* Main.storyboard */,
 				78979CA61BC80882003F86BB /* Assets.xcassets */,
 				78979CA81BC80882003F86BB /* LaunchScreen.storyboard */,
 				78979CAB1BC80882003F86BB /* Info.plist */,
@@ -528,6 +528,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Mmry/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.Mmry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -542,6 +543,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Mmry/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.Mmry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -559,6 +561,7 @@
 				663C6DFA1C0B393D000CA09C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		663C6DFD1C0B393D000CA09C /* Build configuration list for PBXNativeTarget "Mmry watchOS" */ = {
 			isa = XCConfigurationList;
@@ -567,6 +570,7 @@
 				663C6DF81C0B393D000CA09C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78979C951BC80882003F86BB /* Build configuration list for PBXProject "Mmry" */ = {
 			isa = XCConfigurationList;
