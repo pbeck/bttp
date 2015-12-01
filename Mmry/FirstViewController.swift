@@ -8,11 +8,14 @@
 
 import UIKit
 import Photos
+import PermissionScope
 
 // http://stackoverflow.com/questions/29779128/how-to-make-a-random-background-color-with-swift
 func randomCGFloat() -> CGFloat {
     return CGFloat(arc4random()) / CGFloat(UInt32.max)
 }
+
+
 
 extension UIColor {
     static func randomColor() -> UIColor {
@@ -26,128 +29,99 @@ extension UIColor {
     }
 }
 
-class FirstViewController: UIViewController, UICollectionViewDelegate {
+class FirstViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CNPGridMenuDelegate {
 
     struct BCShot {
         var creationDate = NSDate()
         var haveNotified:Bool = false
+        var asset:PHAsset
     }
     
+    var gridmenu:CNPGridMenuItem?
     var shots:[BCShot] = []
     
     @IBOutlet var updateLabel: UILabel?
     var time:NSDate?
     var photoLibrary:PHPhotoLibrary?
     @IBOutlet var collectionView:UICollectionView?
-
+    
+    let pscope = PermissionScope()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pscope.addPermission(PhotosPermission(),
+            message: "Photos")
+        pscope.addPermission(NotificationsPermission(notificationCategories: nil),
+            message: "We use this to send you\r\nspam and love notes")
+        //multiPscope.headerLabel = "Permissions"
+       
+        
+        buildScreenshotList()
         
         let collectionViewLayout = ScreenshotsCollectionViewFlowLayout()
         collectionView?.setCollectionViewLayout(collectionViewLayout, animated: false)
         collectionViewLayout.scrollDirection = .Horizontal
         collectionView?.showsHorizontalScrollIndicator = false
         collectionView?.showsVerticalScrollIndicator = false
-        //collectionView?.backgroundColor = UIColor.redColor()
+        
+        pscope.show({ (finished, results) -> Void in
+            print("got results \(results)")
+            }, cancelled: { (results) -> Void in
+                print("thing was cancelled")
+        })
+
+        // For debugging
+        // collectionView?.backgroundColor = UIColor.redColor()
+        
         collectionView?.pagingEnabled = true
 
         self.collectionView?.registerClass(ScreenshotCell.self, forCellWithReuseIdentifier:"CELL")
         
         
-        self.collectionView?.scrollToItemAtIndexPath(NSIndexPath(forItem: 9, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Right, animated: false)
-        //[self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.theData.count - 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
-       
         
-        updateUI()
-        
-        if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.Authorized {
-            PHPhotoLibrary.requestAuthorization({ (status) -> Void in
-                if status != PHAuthorizationStatus.Authorized {
-                    print("Didn't authorize")
-                }
-            })
-        }
-        
+        self.collectionView?.scrollToItemAtIndexPath(NSIndexPath(forItem: shots.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Right, animated: false)
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    func updateUI() {
-        print("updateUI")
-        
-        //let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        guard let thisTime = time else {
-            updateLabel?.text = "Not yet updated"
-            return
-        }
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = .ShortStyle
-        formatter.timeStyle = .LongStyle
-        updateLabel?.text = formatter.stringFromDate(thisTime)
-        /*
-        if let time = time {
-            let formatter = NSDateFormatter()
-            formatter.dateStyle = .ShortStyle
-            formatter.timeStyle = .LongStyle
-            updateLabel?.text = formatter.stringFromDate(time)
-        }
-        else {
-            updateLabel?.text = "Not yet updated"
-        }
-        */
-        
-        //UIImage
-    }
-    
-    @IBAction func didTapUpdate(sender: UIButton) {
-        //let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
-        fetch { self.updateUI() }
-    }
-    
-    //http://stackoverflow.com/questions/8867496/get-last-image-from-photos-app
-    
-    func fetch(completion: () -> Void) {
-        print("fetch()")
-        time = NSDate()
-        //photoLibrary = PHPhotoLibrary.sharedPhotoLibrary()
-        getLatestPhotos()
-        completion()
-    }
-    
-    func loadScreenshot() {
-        
-        
-    }
-    
-    func getLatestPhotos() {
+
+
+    func buildScreenshotList() {
         let fetchOptions:PHFetchOptions = PHFetchOptions()
-        var fetchResult:PHFetchResult
-        var lastAsset:PHAsset
-        
+        var fetchResults:PHFetchResult
         
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
-        fetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
-        lastAsset = fetchResult.lastObject as! PHAsset
+        fetchResults = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
         
-        // Since we can get screenshots onto the simulator we check for measurements, not metadata
-        // if(isSimulator) {
-        
-        if lastAsset.mediaType == .Image && lastAsset.mediaSubtypes == .PhotoScreenshot {
-            //if lastAsset.pixelWidth == 750 && lastAsset.pixelHeight == 1334 {
-                if !hasThisBeenNotified(lastAsset.creationDate!) {
-                    shots.append(BCShot(creationDate: lastAsset.creationDate!, haveNotified: false))
-                    launchNotification()
-             //   }
-                
+        if(fetchResults.count > 0) {
+            fetchResults.enumerateObjectsUsingBlock { (object, _, _) in
+                if let asset = object as? PHAsset {
+                    
+                    if(isSimulator) {
+                        if asset.pixelWidth == 750 && asset.pixelHeight == 1334 {
+                            self.shots.append(BCShot(creationDate: NSDate(), haveNotified: false, asset: asset))
+                        }
+                    }
+                    else {
+                        if asset.mediaType == .Image && asset.mediaSubtypes == .PhotoScreenshot {
+                            self.shots.append(BCShot(creationDate: NSDate(), haveNotified: false, asset: asset))
+                            /*
+                            if !hasThisBeenNotified(lastAsset.creationDate!) {
+                                shots.append(BCShot(creationDate: lastAsset.creationDate!, haveNotified: false))
+                                launchNotification()
+                            }
+                            */
+                        }
+                    }
+                }
             }
+        } else {
+            fatalError("No screenshots")
         }
-        //print(lastAsset)
     }
     
     func launchNotification() {
@@ -175,30 +149,32 @@ class FirstViewController: UIViewController, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
-            return 10;
+            return shots.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CELL", forIndexPath: indexPath) as! ScreenshotCell
-            cell.setScreenshot()
-            cell.label?.text = "\(indexPath.row)"
+            cell.screenshot = getAssetUIImage(shots[indexPath.row].asset)
+            cell.addScreenshot()
             //cell.backgroundColor = UIColor.randomColor()
-            //cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, self.collectionView!.frame.height, self.collectionView!.frame.height);
             return cell
             
     }
     
+    func getAssetUIImage(asset: PHAsset) -> UIImage {
+        let manager = PHImageManager.defaultManager()
+        let option = PHImageRequestOptions()
+        var thumbnail = UIImage()
+        option.synchronous = true
+        manager.requestImageForAsset(asset, targetSize: CGSize(width: 3000.0, height: 3000.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
+            thumbnail = result!
+        })
+        return thumbnail
+    }
+    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
-        //var cell = collectionView.cellForItemAtIndexPath(indexPath)
-        //print("Tocuhed \(cell) at \(indexPath)")
-        
-        let alertController = UIAlertController(title: "iOScreator", message:
-            "Hello, world!", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.showGridMenu()
     }
     
     
@@ -208,7 +184,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate {
             
             //let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CELL", forIndexPath: indexPath) as! ScreenshotCell
             //print(self.collectionView!.frame.height)
-            return CGSizeMake(400, self.collectionView!.frame.height - 160)
+            return CGSizeMake(320, self.collectionView!.frame.height - 160)
     }
     /*
     
@@ -253,5 +229,63 @@ class FirstViewController: UIViewController, UICollectionViewDelegate {
             scrollView.setContentOffset(CGPointMake(CGFloat(newTargetOffset), 0), animated:true)
     }
     */
+    
+    func showGridMenu() {
+        let laterToday:CNPGridMenuItem = CNPGridMenuItem()
+        laterToday.icon = UIImage(named: "LaterToday")
+        laterToday.title = "Later Today"
+        
+        let thisEvening:CNPGridMenuItem = CNPGridMenuItem()
+        thisEvening.icon = UIImage(named: "ThisEvening")
+        thisEvening.title = "This Evening"
+        
+        let tomorrow:CNPGridMenuItem = CNPGridMenuItem()
+        tomorrow.icon = UIImage(named: "Tomorrow")
+        tomorrow.title = "Tomorrow"
+        
+        /*
+        CNPGridMenuItem *thisWeekend = [[CNPGridMenuItem alloc] init];
+        thisWeekend.icon = [UIImage imageNamed:@"ThisWeekend"];
+        thisWeekend.title = @"This Weekend";
+        
+        CNPGridMenuItem *nextWeek = [[CNPGridMenuItem alloc] init];
+        nextWeek.icon = [UIImage imageNamed:@"NextWeek"];
+        nextWeek.title = @"Next Week";
+        
+        CNPGridMenuItem *inAMonth = [[CNPGridMenuItem alloc] init];
+        inAMonth.icon = [UIImage imageNamed:@"InMonth"];
+        inAMonth.title = @"In A Month";
+        
+        CNPGridMenuItem *someday = [[CNPGridMenuItem alloc] init];
+        someday.icon = [UIImage imageNamed:@"Someday"];
+        someday.title = @"Someday";
+        
+        CNPGridMenuItem *desktop = [[CNPGridMenuItem alloc] init];
+        desktop.icon = [UIImage imageNamed:@"Desktop"];
+        desktop.title = @"Desktop";
+        
+        CNPGridMenuItem *pickDate = [[CNPGridMenuItem alloc] init];
+        pickDate.icon = [UIImage imageNamed:@"PickDate"];
+        pickDate.title = @"Pick Date";
+        */
+        
+        let gridMenu = CNPGridMenu(menuItems:[laterToday, thisEvening, tomorrow])
+        gridMenu.delegate = self
+        self.presentGridMenu(gridMenu, animated: true) { () -> Void in
+            print("Grid menu")
+        }
+    }
+    
+    func gridMenuDidTapOnBackground(menu: CNPGridMenu!) {
+        self.dismissGridMenuAnimated(true) { () -> Void in
+            print("Grid menu dismissed")
+        }
+    }
+    
+    func gridMenu(menu: CNPGridMenu!, didTapOnItem item: CNPGridMenuItem!) {
+        self.dismissGridMenuAnimated(true) { () -> Void in
+            print("Tapped \(item.title)")
+        }
+    }
 }
 

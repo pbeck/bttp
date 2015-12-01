@@ -9,18 +9,27 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    @IBOutlet var stackView:UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad() SVC")
-        // Do any additional setup after loading the view, typically from a nib.
+        for _ in 0...9 {
+            let image = UIImage(named:"screenshot-debug-iphone6")
+            
+            let imageView = UIImageView(image: image)
+            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            //imageView.clipsToBounds = true
+            //stackView.addArrangedSubview(ScreenshotView(image: image!))
+            stackView.addArrangedSubview(imageView)
+        }
+        
+        print(stackView.arrangedSubviews.count)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

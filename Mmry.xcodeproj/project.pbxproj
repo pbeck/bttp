@@ -7,16 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		663C6DDC1C0B393C000CA09C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663C6DDA1C0B393C000CA09C /* Interface.storyboard */; };
-		663C6DDE1C0B393C000CA09C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663C6DDD1C0B393C000CA09C /* Assets.xcassets */; };
-		663C6DE51C0B393D000CA09C /* Mmry watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 663C6DE41C0B393D000CA09C /* Mmry watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		663C6DEC1C0B393D000CA09C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C6DEB1C0B393D000CA09C /* InterfaceController.swift */; };
-		663C6DEE1C0B393D000CA09C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C6DED1C0B393D000CA09C /* ExtensionDelegate.swift */; };
-		663C6DF01C0B393D000CA09C /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C6DEF1C0B393D000CA09C /* NotificationController.swift */; };
-		663C6DF21C0B393D000CA09C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663C6DF11C0B393D000CA09C /* Assets.xcassets */; };
-		663C6DF61C0B393D000CA09C /* Mmry watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 663C6DD81C0B393C000CA09C /* Mmry watchOS.app */; };
 		663C6E001C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C6DFF1C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift */; };
 		663C6E021C0BAF6D000CA09C /* ScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */; };
+		668FEDBF1C0DEA7600A9F289 /* PermissionScope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */; };
+		668FEDC01C0DEA7600A9F289 /* PermissionScope.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		668FEDC51C0DF28200A9F289 /* ScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDC41C0DF28200A9F289 /* ScreenshotView.swift */; };
+		668FEDC91C0E25B800A9F289 /* CNPGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */; };
+		668FEDCB1C0E51DE00A9F289 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */; };
 		78979C9E1BC80882003F86BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78979C9D1BC80882003F86BB /* AppDelegate.swift */; };
 		78979CA01BC80882003F86BB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78979C9F1BC80882003F86BB /* FirstViewController.swift */; };
 		78979CA21BC80882003F86BB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78979CA11BC80882003F86BB /* SecondViewController.swift */; };
@@ -25,62 +22,39 @@
 		78979CAA1BC80882003F86BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78979CA81BC80882003F86BB /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		663C6DE61C0B393D000CA09C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78979C921BC80882003F86BB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 663C6DE31C0B393D000CA09C;
-			remoteInfo = "Mmry watchOS Extension";
-		};
-		663C6DF41C0B393D000CA09C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78979C921BC80882003F86BB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 663C6DD71C0B393C000CA09C;
-			remoteInfo = "Mmry watchOS";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		663C6DFC1C0B393D000CA09C /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				663C6DE51C0B393D000CA09C /* Mmry watchOS Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		663C6DFE1C0B393D000CA09C /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				663C6DF61C0B393D000CA09C /* Mmry watchOS.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		668FEDC11C0DEA7600A9F289 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				668FEDC01C0DEA7600A9F289 /* PermissionScope.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		663C6DD81C0B393C000CA09C /* Mmry watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mmry watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		663C6DDB1C0B393C000CA09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		663C6DDD1C0B393C000CA09C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		663C6DDF1C0B393C000CA09C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		663C6DE41C0B393D000CA09C /* Mmry watchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Mmry watchOS Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		663C6DEA1C0B393D000CA09C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		663C6DEB1C0B393D000CA09C /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		663C6DED1C0B393D000CA09C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		663C6DEF1C0B393D000CA09C /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		663C6DF11C0B393D000CA09C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		663C6DF31C0B393D000CA09C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		663C6DFF1C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotCell.swift; sourceTree = "<group>"; };
+		668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PermissionScope.framework; path = Carthage/Build/iOS/PermissionScope.framework; sourceTree = "<group>"; };
+		668FEDC41C0DF28200A9F289 /* ScreenshotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotView.swift; sourceTree = "<group>"; };
+		668FEDC61C0E25B800A9F289 /* Mmry-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mmry-Bridging-Header.h"; sourceTree = "<group>"; };
+		668FEDC71C0E25B800A9F289 /* CNPGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPGridMenu.h; sourceTree = "<group>"; };
+		668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPGridMenu.m; sourceTree = "<group>"; };
+		668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		78979C9A1BC80882003F86BB /* Mmry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mmry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78979C9D1BC80882003F86BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78979C9F1BC80882003F86BB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -92,60 +66,30 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		663C6DE11C0B393D000CA09C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		78979C971BC80882003F86BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668FEDBF1C0DEA7600A9F289 /* PermissionScope.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		663C6DD91C0B393C000CA09C /* Mmry watchOS */ = {
+		668FEDC21C0DEA8900A9F289 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				663C6DDA1C0B393C000CA09C /* Interface.storyboard */,
-				663C6DDD1C0B393C000CA09C /* Assets.xcassets */,
-				663C6DDF1C0B393C000CA09C /* Info.plist */,
+				668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */,
 			);
-			path = "Mmry watchOS";
-			sourceTree = "<group>";
-		};
-		663C6DE81C0B393D000CA09C /* Mmry watchOS Extension */ = {
-			isa = PBXGroup;
-			children = (
-				663C6DEB1C0B393D000CA09C /* InterfaceController.swift */,
-				663C6DED1C0B393D000CA09C /* ExtensionDelegate.swift */,
-				663C6DEF1C0B393D000CA09C /* NotificationController.swift */,
-				663C6DF11C0B393D000CA09C /* Assets.xcassets */,
-				663C6DF31C0B393D000CA09C /* Info.plist */,
-				663C6DE91C0B393D000CA09C /* Supporting Files */,
-			);
-			path = "Mmry watchOS Extension";
-			sourceTree = "<group>";
-		};
-		663C6DE91C0B393D000CA09C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				663C6DEA1C0B393D000CA09C /* PushNotificationPayload.apns */,
-			);
-			name = "Supporting Files";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		78979C911BC80882003F86BB = {
 			isa = PBXGroup;
 			children = (
 				78979C9C1BC80882003F86BB /* Mmry */,
-				663C6DD91C0B393C000CA09C /* Mmry watchOS */,
-				663C6DE81C0B393D000CA09C /* Mmry watchOS Extension */,
+				668FEDC21C0DEA8900A9F289 /* Frameworks */,
 				78979C9B1BC80882003F86BB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -154,8 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				78979C9A1BC80882003F86BB /* Mmry.app */,
-				663C6DD81C0B393C000CA09C /* Mmry watchOS.app */,
-				663C6DE41C0B393D000CA09C /* Mmry watchOS Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,15 +105,20 @@
 		78979C9C1BC80882003F86BB /* Mmry */ = {
 			isa = PBXGroup;
 			children = (
+				668FEDC71C0E25B800A9F289 /* CNPGridMenu.h */,
+				668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */,
 				78979C9D1BC80882003F86BB /* AppDelegate.swift */,
 				78979C9F1BC80882003F86BB /* FirstViewController.swift */,
 				78979CA11BC80882003F86BB /* SecondViewController.swift */,
+				668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */,
+				668FEDC41C0DF28200A9F289 /* ScreenshotView.swift */,
 				663C6DFF1C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift */,
 				663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */,
 				78979CA31BC80882003F86BB /* Main.storyboard */,
 				78979CA61BC80882003F86BB /* Assets.xcassets */,
 				78979CA81BC80882003F86BB /* LaunchScreen.storyboard */,
 				78979CAB1BC80882003F86BB /* Info.plist */,
+				668FEDC61C0E25B800A9F289 /* Mmry-Bridging-Header.h */,
 			);
 			path = Mmry;
 			sourceTree = "<group>";
@@ -179,40 +126,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		663C6DD71C0B393C000CA09C /* Mmry watchOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 663C6DFD1C0B393D000CA09C /* Build configuration list for PBXNativeTarget "Mmry watchOS" */;
-			buildPhases = (
-				663C6DD61C0B393C000CA09C /* Resources */,
-				663C6DFC1C0B393D000CA09C /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				663C6DE71C0B393D000CA09C /* PBXTargetDependency */,
-			);
-			name = "Mmry watchOS";
-			productName = "Mmry watchOS";
-			productReference = 663C6DD81C0B393C000CA09C /* Mmry watchOS.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		663C6DE31C0B393D000CA09C /* Mmry watchOS Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 663C6DFB1C0B393D000CA09C /* Build configuration list for PBXNativeTarget "Mmry watchOS Extension" */;
-			buildPhases = (
-				663C6DE01C0B393D000CA09C /* Sources */,
-				663C6DE11C0B393D000CA09C /* Frameworks */,
-				663C6DE21C0B393D000CA09C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Mmry watchOS Extension";
-			productName = "Mmry watchOS Extension";
-			productReference = 663C6DE41C0B393D000CA09C /* Mmry watchOS Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 		78979C991BC80882003F86BB /* Mmry */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78979CAE1BC80882003F86BB /* Build configuration list for PBXNativeTarget "Mmry" */;
@@ -221,11 +134,12 @@
 				78979C971BC80882003F86BB /* Frameworks */,
 				78979C981BC80882003F86BB /* Resources */,
 				663C6DFE1C0B393D000CA09C /* Embed Watch Content */,
+				668FEDC11C0DEA7600A9F289 /* Embed Frameworks */,
+				668FEDC31C0DEAA500A9F289 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				663C6DF51C0B393D000CA09C /* PBXTargetDependency */,
 			);
 			name = Mmry;
 			productName = Mmry;
@@ -242,13 +156,6 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Beckman Creative";
 				TargetAttributes = {
-					663C6DD71C0B393C000CA09C = {
-						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = NGB32TH254;
-					};
-					663C6DE31C0B393D000CA09C = {
-						CreatedOnToolsVersion = 7.1.1;
-					};
 					78979C991BC80882003F86BB = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = NGB32TH254;
@@ -274,30 +181,11 @@
 			projectRoot = "";
 			targets = (
 				78979C991BC80882003F86BB /* Mmry */,
-				663C6DD71C0B393C000CA09C /* Mmry watchOS */,
-				663C6DE31C0B393D000CA09C /* Mmry watchOS Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		663C6DD61C0B393C000CA09C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				663C6DDE1C0B393C000CA09C /* Assets.xcassets in Resources */,
-				663C6DDC1C0B393C000CA09C /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		663C6DE21C0B393D000CA09C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				663C6DF21C0B393D000CA09C /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		78979C981BC80882003F86BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,53 +198,42 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXSourcesBuildPhase section */
-		663C6DE01C0B393D000CA09C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXShellScriptBuildPhase section */
+		668FEDC31C0DEAA500A9F289 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				663C6DF01C0B393D000CA09C /* NotificationController.swift in Sources */,
-				663C6DEE1C0B393D000CA09C /* ExtensionDelegate.swift in Sources */,
-				663C6DEC1C0B393D000CA09C /* InterfaceController.swift in Sources */,
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/PermissionScope.framework",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		78979C961BC80882003F86BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668FEDC51C0DF28200A9F289 /* ScreenshotView.swift in Sources */,
 				78979CA21BC80882003F86BB /* SecondViewController.swift in Sources */,
 				78979C9E1BC80882003F86BB /* AppDelegate.swift in Sources */,
+				668FEDC91C0E25B800A9F289 /* CNPGridMenu.m in Sources */,
 				663C6E001C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift in Sources */,
 				663C6E021C0BAF6D000CA09C /* ScreenshotCell.swift in Sources */,
 				78979CA01BC80882003F86BB /* FirstViewController.swift in Sources */,
+				668FEDCB1C0E51DE00A9F289 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		663C6DE71C0B393D000CA09C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 663C6DE31C0B393D000CA09C /* Mmry watchOS Extension */;
-			targetProxy = 663C6DE61C0B393D000CA09C /* PBXContainerItemProxy */;
-		};
-		663C6DF51C0B393D000CA09C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 663C6DD71C0B393C000CA09C /* Mmry watchOS */;
-			targetProxy = 663C6DF41C0B393D000CA09C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		663C6DDA1C0B393C000CA09C /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				663C6DDB1C0B393C000CA09C /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
 		78979CA31BC80882003F86BB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -376,70 +253,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		663C6DF71C0B393D000CA09C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				IBSC_MODULE = Mmry_watchOS_Extension;
-				INFOPLIST_FILE = "Mmry watchOS/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.Mmry.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		663C6DF81C0B393D000CA09C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				IBSC_MODULE = Mmry_watchOS_Extension;
-				INFOPLIST_FILE = "Mmry watchOS/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.Mmry.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		663C6DF91C0B393D000CA09C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Mmry watchOS Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.Mmry.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		663C6DFA1C0B393D000CA09C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Mmry watchOS Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.Mmry.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
 		78979CAC1BC80882003F86BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -525,14 +338,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Mmry/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.Mmry;
+				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.mmry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mmry/Mmry-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -540,38 +360,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Mmry/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.Mmry;
+				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.mmry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mmry/Mmry-Bridging-Header.h";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		663C6DFB1C0B393D000CA09C /* Build configuration list for PBXNativeTarget "Mmry watchOS Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				663C6DF91C0B393D000CA09C /* Debug */,
-				663C6DFA1C0B393D000CA09C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		663C6DFD1C0B393D000CA09C /* Build configuration list for PBXNativeTarget "Mmry watchOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				663C6DF71C0B393D000CA09C /* Debug */,
-				663C6DF81C0B393D000CA09C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		78979C951BC80882003F86BB /* Build configuration list for PBXProject "Mmry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

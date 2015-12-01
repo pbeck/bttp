@@ -35,47 +35,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         /*
-        locationManager = CLLocationManager()
-        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager?.delegate = self
-        locationManager?.requestAlwaysAuthorization()
-        locationManager?.startUpdatingLocation()
-  
-        UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
-        if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedAlways {
-            CLLocationManager().requestAlwaysAuthorization()
-        }
-        */
         application.registerUserNotificationSettings(
             UIUserNotificationSettings(
                 forTypes: [.Alert, .Badge, .Sound],
                 categories: nil))
+        */
         return true
     }
     
-    /*
-    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-            print("---")
-            print("Background fetch")
-            print("---")
-            if let tabBarController = self.window?.rootViewController as? UITabBarController,
-                viewControllers = tabBarController.viewControllers! as? [UIViewController] {
-                    for viewController in viewControllers {
-                        if let firstViewController = viewController as? FirstViewController {
-                            firstViewController.fetch {
-                                firstViewController.updateUI()
-                                completionHandler(.NewData)
-                            }
-                        }
-                    }
-            }
-            /*
-            let vc = self.window?.rootViewController.
-            self.window?.rootViewController.first
-            completionHandler(.NewData)
-            */
-    }
-    */
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -103,45 +70,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         //
     }
     
-    /*
-    func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-            print("Heading changed")
-            if let tabBarController = UIApplication.sharedApplication().windows[0].rootViewController as? UITabBarController,
-                viewControllers = tabBarController.viewControllers! as? [UIViewController] {
-                    for viewController in viewControllers {
-                        if let firstViewController = viewController as? FirstViewController {
-                            firstViewController.fetch {
-                                firstViewController.updateUI()
-                                //completionHandler()
-                            }
-                        }
-                    }
-            }
-    }
-    
-    func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
-        print("didDetermineState")
-        
-    }
-    
-    func locationManager(manager: CLLocationManager, didVisit visit: CLVisit) {
-        print("didVisit")
-    }
-    
-    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
-        print("Location changed")
-        if let tabBarController = UIApplication.sharedApplication().windows[0].rootViewController as? UITabBarController,
-            viewControllers = tabBarController.viewControllers! as? [UIViewController] {
-                for viewController in viewControllers {
-                    if let firstViewController = viewController as? FirstViewController {
-                        firstViewController.fetch {
-                            firstViewController.updateUI()
-                            //completionHandler()
-                        }
-                    }
-                }
-        }
-    }
-    */
 }
 
