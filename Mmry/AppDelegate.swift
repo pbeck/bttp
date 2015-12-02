@@ -22,10 +22,12 @@ import CoreMotion
     let isSimulator = false
 #endif
 
+//#define beep() AudioServicesPlaySystemSound(1005);
+
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, PHPhotoLibraryChangeObserver {
 
     var window: UIWindow?
     //var time: NSDate?
@@ -33,17 +35,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     var locationManager: CLLocationManager!
     
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        if let options = launchOptions {
+            
+            // If app is closed but gets started from a local notification this is where we end up
+            if((options["UIApplicationLaunchOptionsLocalNotificationKey"]) != nil) {
+                // Show notification
+            }
+        }
+
         
         application.registerUserNotificationSettings(
             UIUserNotificationSettings(
                 forTypes: [.Alert, .Badge, .Sound],
                 categories: nil))
         
+        PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
         return true
     }
     
+    func photoLibraryDidChange(changeInfo: PHChange) {
+        print("photoLibraryDidChange()")
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        application.applicationIconBadgeNumber = 0
+        print(notification.userInfo!["UUID"])
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("ShowReminder") as! ShowReminderViewController
+        self.window!.rootViewController!.presentViewController(vc, animated: true, completion: nil)
+    }
 
+    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: ([NSObject : AnyObject]?) -> Void) {
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -60,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        print("Reload photos here")
     }
 
     func applicationWillTerminate(application: UIApplication) {

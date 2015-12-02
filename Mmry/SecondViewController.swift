@@ -8,22 +8,27 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var stackView:UIStackView!
+    @IBOutlet var scrollView:UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad() SVC")
+
         for _ in 0...9 {
             let image = UIImage(named:"screenshot-debug-iphone6")
             
-            let imageView = UIImageView(image: image)
-            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            //let imageView = UIImageView(image: image)
+            let imageView = UIImageView(frame: CGRectMake(100, 150, 150, 100))
+            imageView.image = image
+            //imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            imageView.bounds = CGRectInset(imageView.frame, 20.0, 20.0)
             //imageView.clipsToBounds = true
             //stackView.addArrangedSubview(ScreenshotView(image: image!))
             stackView.addArrangedSubview(imageView)
+            
         }
-        
         print(stackView.arrangedSubviews.count)
     }
 

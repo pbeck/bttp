@@ -10,8 +10,11 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
 
+    //@IBOutlet var tableView:UITableView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.tableView.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -22,7 +25,7 @@ class SettingsViewController: UITableViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -30,7 +33,6 @@ class SettingsViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
     
     @IBAction func openTwitter() {
         let screenName =  "pbeck"

@@ -232,6 +232,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     */
     
     func showGridMenu() {
+        
         let laterToday:CNPGridMenuItem = CNPGridMenuItem()
         laterToday.icon = UIImage(named: "LaterToday")
         laterToday.title = "Later Today"
@@ -244,33 +245,32 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         tomorrow.icon = UIImage(named: "Tomorrow")
         tomorrow.title = "Tomorrow"
         
-        /*
-        CNPGridMenuItem *thisWeekend = [[CNPGridMenuItem alloc] init];
-        thisWeekend.icon = [UIImage imageNamed:@"ThisWeekend"];
-        thisWeekend.title = @"This Weekend";
+        let thisWeekend:CNPGridMenuItem = CNPGridMenuItem()
+        thisWeekend.icon = UIImage(named: "ThisWeekend")
+        thisWeekend.title = "This Weekend"
         
-        CNPGridMenuItem *nextWeek = [[CNPGridMenuItem alloc] init];
-        nextWeek.icon = [UIImage imageNamed:@"NextWeek"];
-        nextWeek.title = @"Next Week";
+        let nextWeek:CNPGridMenuItem = CNPGridMenuItem()
+        nextWeek.icon = UIImage(named: "NextWeek")
+        nextWeek.title = "Next Week"
         
-        CNPGridMenuItem *inAMonth = [[CNPGridMenuItem alloc] init];
-        inAMonth.icon = [UIImage imageNamed:@"InMonth"];
-        inAMonth.title = @"In A Month";
+        let inAMonth:CNPGridMenuItem = CNPGridMenuItem()
+        inAMonth.icon = UIImage(named: "InMonth")
+        inAMonth.title = "In a Month"
         
-        CNPGridMenuItem *someday = [[CNPGridMenuItem alloc] init];
-        someday.icon = [UIImage imageNamed:@"Someday"];
-        someday.title = @"Someday";
+        let someday:CNPGridMenuItem = CNPGridMenuItem()
+        someday.icon = UIImage(named: "Someday")
+        someday.title = "Someday"
         
-        CNPGridMenuItem *desktop = [[CNPGridMenuItem alloc] init];
-        desktop.icon = [UIImage imageNamed:@"Desktop"];
-        desktop.title = @"Desktop";
+        let pickDate:CNPGridMenuItem = CNPGridMenuItem()
+        pickDate.icon = UIImage(named: "PickDate")
+        pickDate.title = "Pick Date"
         
-        CNPGridMenuItem *pickDate = [[CNPGridMenuItem alloc] init];
-        pickDate.icon = [UIImage imageNamed:@"PickDate"];
-        pickDate.title = @"Pick Date";
-        */
+        let debug5secs:CNPGridMenuItem = CNPGridMenuItem()
+        debug5secs.icon = UIImage(named: "Desktop")
+        debug5secs.title = "Debug"
         
-        let gridMenu = CNPGridMenu(menuItems:[laterToday, thisEvening, tomorrow])
+        
+        let gridMenu = CNPGridMenu(menuItems:[laterToday, thisEvening, tomorrow, thisWeekend, nextWeek, inAMonth, someday, pickDate, debug5secs])
         gridMenu.delegate = self
         self.presentGridMenu(gridMenu, animated: true) { () -> Void in
             print("Grid menu")
@@ -285,14 +285,63 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func gridMenu(menu: CNPGridMenu!, didTapOnItem item: CNPGridMenuItem!) {
         self.dismissGridMenuAnimated(true) { () -> Void in
-            print("Tapped \(item.title)")
-            self.testNotification()
+            let now = NSDate()
+            let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+            let components = calendar?.components([NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day], fromDate: now)
+        
+            switch(item.title) {
+             
+                
+                case "Later Today":
+                    self.setNotification(NSDate().dateByAddingTimeInterval(60.0 * 60.0))
+                break
+                
+                case "This Eventing":
+                    components!.hour = 20
+                    self.setNotification((calendar?.dateFromComponents(components!))!)
+                break
+                
+                case "Tomorrow":
+                    // 24 hours ahead or 08:00 am?
+                break
+                
+                case "ThisWeekend":
+                    // The coming saturday
+                break
+                
+                case "NextWeek":
+                    // The coming monday
+                break
+                
+                case "InMonth":
+                    // Beginning of next month or 30 days?
+                break
+                
+                case "Someday":
+                    // 3 months from now
+                break
+                
+                case "PickDate":
+                    DatePickerDialog().show("Pick a Date", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .Date) {
+                        (date) -> Void in
+                        print("\(date)")
+                    }
+                break
+                
+                case "Debug":
+                    self.setNotification(NSDate().dateByAddingTimeInterval(5.0))
+                break
+                
+                default:
+                    // ...
+                break
+            }
         }
     }
     
     private let ITEMS_KEY = "todoItems"
     
-    func testNotification() {
+    func setNotification(date: NSDate) {
         /*
         // persist a representation of this todo item in NSUserDefaults
         var todoDictionary = NSUserDefaults.standardUserDefaults().dictionaryForKey(ITEMS_KEY) ?? Dictionary() // if todoItems hasn't been set in user defaults, initialize todoDictionary to an empty dictionary using nil-coalescing operator (??)
@@ -300,14 +349,21 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         todoDictionary[item.UUID] = ["deadline": item.deadline, "title": item.title, "UUID": item.UUID] // store NSData representation of todo item in dictionary with UUID as key
         NSUserDefaults.standardUserDefaults().setObject(todoDictionary, forKey: ITEMS_KEY) // save/overwrite todo item list
         */
+        
         let notification = UILocalNotification()
-        notification.alertBody = "Mmry"
-        notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
-        notification.fireDate = NSDate().dateByAddingTimeInterval(5.0)// todo item due date (when notification will be fired)
-        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
-        //notification.userInfo = ["UUID": item.UUID, ] // assign a unique identifier to the notification so that we can retrieve it later
+        
+        notification.alertTitle = "Mmry"
+        
+        let emojis = ["⏰", "🎉", "💻", "🌈"]
+        let randomIndex = Int(arc4random_uniform(UInt32(emojis.count)))
+        notification.alertBody = "There's a reminder waiting for you! \(emojis[randomIndex]) "
+        
+        notification.fireDate = date
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.userInfo = ["UUID": "test"]
         notification.category = "TODO_CATEGORY"
         notification.applicationIconBadgeNumber = 1;
+        
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 }

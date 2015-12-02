@@ -28,6 +28,8 @@
 		78979CA51BC80882003F86BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78979CA31BC80882003F86BB /* Main.storyboard */; };
 		78979CA71BC80882003F86BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78979CA61BC80882003F86BB /* Assets.xcassets */; };
 		78979CAA1BC80882003F86BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78979CA81BC80882003F86BB /* LaunchScreen.storyboard */; };
+		78E6E5731C0F3BE40062929D /* ShowReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E6E5721C0F3BE40062929D /* ShowReminderViewController.swift */; };
+		78E6E5751C0F5B560062929D /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E6E5741C0F5B560062929D /* DatePickerDialog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		78979CA61BC80882003F86BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78979CA91BC80882003F86BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78979CAB1BC80882003F86BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78E6E5721C0F3BE40062929D /* ShowReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowReminderViewController.swift; sourceTree = "<group>"; };
+		78E6E5741C0F5B560062929D /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,15 +199,17 @@
 		78979C9C1BC80882003F86BB /* Mmry */ = {
 			isa = PBXGroup;
 			children = (
-				668FEDC71C0E25B800A9F289 /* CNPGridMenu.h */,
-				668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */,
 				78979C9D1BC80882003F86BB /* AppDelegate.swift */,
 				78979C9F1BC80882003F86BB /* FirstViewController.swift */,
 				78979CA11BC80882003F86BB /* SecondViewController.swift */,
 				668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */,
+				78E6E5721C0F3BE40062929D /* ShowReminderViewController.swift */,
 				668FEDC41C0DF28200A9F289 /* ScreenshotView.swift */,
 				663C6DFF1C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift */,
 				663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */,
+				668FEDC71C0E25B800A9F289 /* CNPGridMenu.h */,
+				668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */,
+				78E6E5741C0F5B560062929D /* DatePickerDialog.swift */,
 				78979CA31BC80882003F86BB /* Main.storyboard */,
 				78979CA61BC80882003F86BB /* Assets.xcassets */,
 				78979CA81BC80882003F86BB /* LaunchScreen.storyboard */,
@@ -381,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E6E5731C0F3BE40062929D /* ShowReminderViewController.swift in Sources */,
 				668FEDC51C0DF28200A9F289 /* ScreenshotView.swift in Sources */,
 				78979CA21BC80882003F86BB /* SecondViewController.swift in Sources */,
 				78979C9E1BC80882003F86BB /* AppDelegate.swift in Sources */,
@@ -389,6 +396,7 @@
 				663C6E021C0BAF6D000CA09C /* ScreenshotCell.swift in Sources */,
 				78979CA01BC80882003F86BB /* FirstViewController.swift in Sources */,
 				668FEDCB1C0E51DE00A9F289 /* SettingsViewController.swift in Sources */,
+				78E6E5751C0F5B560062929D /* DatePickerDialog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +641,7 @@
 				6632F0981C0EE43A000D084F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6632F09B1C0EE43A000D084F /* Build configuration list for PBXNativeTarget "Mmry Apple Watch" */ = {
 			isa = XCConfigurationList;
@@ -641,6 +650,7 @@
 				6632F0961C0EE43A000D084F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78979C951BC80882003F86BB /* Build configuration list for PBXProject "Mmry" */ = {
 			isa = XCConfigurationList;
