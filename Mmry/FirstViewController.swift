@@ -35,6 +35,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         var creationDate = NSDate()
         var haveNotified:Bool = false
         var asset:PHAsset
+        //var UUID:String
     }
     
     var gridmenu:CNPGridMenuItem?
@@ -53,7 +54,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         pscope.addPermission(PhotosPermission(),
             message: "Photos")
         pscope.addPermission(NotificationsPermission(notificationCategories: nil),
-            message: "We use this to send you\r\nspam and love notes")
+            message: "Notifications")
         //multiPscope.headerLabel = "Permissions"
        
         
@@ -285,7 +286,29 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     func gridMenu(menu: CNPGridMenu!, didTapOnItem item: CNPGridMenuItem!) {
         self.dismissGridMenuAnimated(true) { () -> Void in
             print("Tapped \(item.title)")
+            self.testNotification()
         }
+    }
+    
+    private let ITEMS_KEY = "todoItems"
+    
+    func testNotification() {
+        /*
+        // persist a representation of this todo item in NSUserDefaults
+        var todoDictionary = NSUserDefaults.standardUserDefaults().dictionaryForKey(ITEMS_KEY) ?? Dictionary() // if todoItems hasn't been set in user defaults, initialize todoDictionary to an empty dictionary using nil-coalescing operator (??)
+        
+        todoDictionary[item.UUID] = ["deadline": item.deadline, "title": item.title, "UUID": item.UUID] // store NSData representation of todo item in dictionary with UUID as key
+        NSUserDefaults.standardUserDefaults().setObject(todoDictionary, forKey: ITEMS_KEY) // save/overwrite todo item list
+        */
+        let notification = UILocalNotification()
+        notification.alertBody = "Mmry"
+        notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
+        notification.fireDate = NSDate().dateByAddingTimeInterval(5.0)// todo item due date (when notification will be fired)
+        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
+        //notification.userInfo = ["UUID": item.UUID, ] // assign a unique identifier to the notification so that we can retrieve it later
+        notification.category = "TODO_CATEGORY"
+        notification.applicationIconBadgeNumber = 1;
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 }
 
