@@ -19,13 +19,13 @@ class ScreenshotView: UIView {
    
     convenience init(image screenshotImage: UIImage) {
         self.init(frame:CGRect.zero)
-        self.screenshotView = UIImageView(frame: CGRectMake(100, 150, 150, 100))
+        self.screenshotView = UIImageView(image: screenshotImage) //frame: CGRectMake(100, 150, 150, 100))
         self.screenshotView.image = screenshotImage
         
         self.screenshotView.clipsToBounds = true
         // Opaque = optimizing
         self.screenshotView.opaque = true
-       
+        self.clipsToBounds = true
         self.screenshotView.backgroundColor = UIColor.blueColor()
         //self.screenshotView.bounds = CGRectInset(self.frame, 10.0, 10.0);
         self.addSubview(self.screenshotView)

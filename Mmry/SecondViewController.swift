@@ -17,16 +17,20 @@ class SecondViewController: UIViewController, UIScrollViewDelegate {
         print("viewDidLoad() SVC")
 
         for _ in 0...9 {
-            let image = UIImage(named:"screenshot-debug-iphone6")
             
+            /*
+            let image = UIImage(named:"screenshot-debug-iphone6")
             //let imageView = UIImageView(image: image)
             let imageView = UIImageView(frame: CGRectMake(100, 150, 150, 100))
             imageView.image = image
             //imageView.contentMode = UIViewContentMode.ScaleAspectFit
             imageView.bounds = CGRectInset(imageView.frame, 20.0, 20.0)
             //imageView.clipsToBounds = true
-            //stackView.addArrangedSubview(ScreenshotView(image: image!))
             stackView.addArrangedSubview(imageView)
+            */
+            
+            let image = UIImage(named:"screenshot-debug-iphone6")
+            stackView.addArrangedSubview(ScreenshotView(image: image!))            
             
         }
         print(stackView.arrangedSubviews.count)

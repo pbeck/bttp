@@ -29,13 +29,15 @@ extension UIColor {
     }
 }
 
+let ScreenshotCellIdentifier = "SCREENSHOTCELLIDENTIFIER"
+
 class FirstViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CNPGridMenuDelegate {
 
     struct BCShot {
         var creationDate = NSDate()
         var haveNotified:Bool = false
         var asset:PHAsset
-        //var UUID:String
+        var UUID:NSUUID
     }
     
     var gridmenu:CNPGridMenuItem?
@@ -56,32 +58,21 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         pscope.addPermission(NotificationsPermission(notificationCategories: nil),
             message: "Notifications")
         //multiPscope.headerLabel = "Permissions"
-       
-        
-        buildScreenshotList()
-        
-        let collectionViewLayout = ScreenshotsCollectionViewFlowLayout()
-        collectionView?.setCollectionViewLayout(collectionViewLayout, animated: false)
-        collectionViewLayout.scrollDirection = .Horizontal
-        collectionView?.showsHorizontalScrollIndicator = false
-        collectionView?.showsVerticalScrollIndicator = false
-        
         pscope.show({ (finished, results) -> Void in
             print("got results \(results)")
             }, cancelled: { (results) -> Void in
                 print("thing was cancelled")
         })
-
+       
+        buildScreenshotList()
+        
         // For debugging
         // collectionView?.backgroundColor = UIColor.redColor()
-        
-        collectionView?.pagingEnabled = true
-
-        self.collectionView?.registerClass(ScreenshotCell.self, forCellWithReuseIdentifier:"CELL")
-        
-        
-        
-        self.collectionView?.scrollToItemAtIndexPath(NSIndexPath(forItem: shots.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Right, animated: false)
+      
+        //let collectionViewLayout = ScreenshotsCollectionViewFlowLayout()
+        //collectionView?.setCollectionViewLayout(collectionViewLayout, animated: false)
+        collectionView?.registerClass(ScreenshotCell.self, forCellWithReuseIdentifier:ScreenshotCellIdentifier)
+        collectionView?.scrollToItemAtIndexPath(NSIndexPath(forItem: shots.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Right, animated: false)
         
     }
     
@@ -104,12 +95,12 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
                     
                     if(isSimulator) {
                         if asset.pixelWidth == 750 && asset.pixelHeight == 1334 {
-                            self.shots.append(BCShot(creationDate: NSDate(), haveNotified: false, asset: asset))
+                            self.shots.append(BCShot(creationDate: NSDate(), haveNotified: false, asset: asset, UUID: NSUUID()))
                         }
                     }
                     else {
                         if asset.mediaType == .Image && asset.mediaSubtypes == .PhotoScreenshot {
-                            self.shots.append(BCShot(creationDate: NSDate(), haveNotified: false, asset: asset))
+                            self.shots.append(BCShot(creationDate: NSDate(), haveNotified: false, asset: asset, UUID: NSUUID()))
                             /*
                             if !hasThisBeenNotified(lastAsset.creationDate!) {
                                 shots.append(BCShot(creationDate: lastAsset.creationDate!, haveNotified: false))
@@ -155,7 +146,8 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CELL", forIndexPath: indexPath) as! ScreenshotCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(ScreenshotCellIdentifier, forIndexPath: indexPath) as! ScreenshotCell
+            
             cell.screenshot = getAssetUIImage(shots[indexPath.row].asset)
             cell.addScreenshot()
             //cell.backgroundColor = UIColor.randomColor()
@@ -174,6 +166,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         return thumbnail
     }
     
+    // http://stackoverflow.com/questions/13780153/uicollectionview-animate-cell-size-change-on-selection
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         self.showGridMenu()
     }
@@ -184,9 +177,10 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             
             //let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CELL", forIndexPath: indexPath) as! ScreenshotCell
-            //print(self.collectionView!.frame.height)
-            return CGSizeMake(320, self.collectionView!.frame.height - 160)
+            
+            return CGSizeMake(self.collectionView!.frame.width * 0.8, self.collectionView!.frame.height)
     }
+    
     /*
     
     func collectionView(_ collectionView: UICollectionView,
@@ -296,13 +290,16 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
                     self.setNotification(NSDate().dateByAddingTimeInterval(60.0 * 60.0))
                 break
                 
-                case "This Eventing":
+                case "This Evening":
+                    // TODO: What if this evening (20:00) has already passed?
                     components!.hour = 20
                     self.setNotification((calendar?.dateFromComponents(components!))!)
                 break
                 
                 case "Tomorrow":
-                    // 24 hours ahead or 08:00 am?
+                    // Next 08:00
+                    components!.hour = 8
+                    self.setNotification((calendar?.nextDateAfterDate(NSDate(), matchingComponents: components!, options: [NSCalendarOptions.MatchNextTimePreservingSmallerUnits]))!)
                 break
                 
                 case "ThisWeekend":
@@ -354,9 +351,9 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         notification.alertTitle = "Mmry"
         
-        let emojis = ["⏰", "🎉", "💻", "🌈"]
+        let emojis = ["⏰", "🎉", "🌈"]
         let randomIndex = Int(arc4random_uniform(UInt32(emojis.count)))
-        notification.alertBody = "There's a reminder waiting for you! \(emojis[randomIndex]) "
+        notification.alertBody = "\(emojis[randomIndex]) There's a reminder waiting for you!"
         
         notification.fireDate = date
         notification.soundName = UILocalNotificationDefaultSoundName

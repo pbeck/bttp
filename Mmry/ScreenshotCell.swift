@@ -12,19 +12,9 @@ import UIKit
 class ScreenshotCell: UICollectionViewCell {
     var label:UILabel?
     var screenshotView:UIView?
-    
+    var createReminderButton:UIButton?
     var screenshot:UIImage?
         
-    /*
-    {
-        get {
-            return self.screenshot
-        }
-        set {
-            self.screenshot = newValue
-        }
-    }
-    */
     var screenshotSize: CGSize {
         get {
             return CGSizeMake(self.screenshot!.size.width, self.screenshot!.size.height)
@@ -33,8 +23,18 @@ class ScreenshotCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.setup()
+    }
+    
+    func setup() {
         // For debugging
         // self.backgroundColor = UIColor.greenColor()
+        
         /*
         self.label = UILabel.init(frame: CGRectMake(0, 0, frame.size.width, frame.size.height))
         self.label!.font = UIFont.boldSystemFontOfSize(60)
@@ -43,17 +43,15 @@ class ScreenshotCell: UICollectionViewCell {
         
         self.contentView.addSubview(self.label!)
         */
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        
+        //self.screenshotView.bounds = CGRectInset(self.frame, 10.0, 10.0);
     }
     
     func addScreenshot() {
         screenshotView = UIImageView(image: self.screenshot)
         screenshotView!.contentMode = .ScaleAspectFit
         screenshotView!.opaque = true
-        screenshotView!.backgroundColor = UIColor.clearColor()
+        screenshotView!.backgroundColor = UIColor.blueColor()
         screenshotView!.bounds = self.bounds
         screenshotView!.center = CGPointMake(self.contentView.frame.size.width / 2, self.contentView.frame.size.height / 2);
         self.contentView.addSubview(screenshotView!)
@@ -62,10 +60,9 @@ class ScreenshotCell: UICollectionViewCell {
         let layer = screenshotView!.layer
         layer.shadowOffset = CGSizeMake(0,1)
         layer.shadowColor = UIColor.blackColor().CGColor
-        layer.shadowRadius = 2
-        layer.shadowOpacity = 0.6
-        screenshotView?.clipsToBounds = false
-*/
+        layer.shadowRadius = 26
+        layer.shadowOpacity = 0.2
+        */
     }
 
 

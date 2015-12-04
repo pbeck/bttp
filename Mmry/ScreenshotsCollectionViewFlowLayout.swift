@@ -14,14 +14,27 @@ class ScreenshotsCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     override init() {
         super.init()
-        self.minimumInteritemSpacing = 0;
-        self.minimumLineSpacing = 0;
-        //self.itemSize = CGSizeMake(400, 520);
-        self.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        self.setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        self.setup()
+    }
+    
+    func setup() {
+        self.minimumInteritemSpacing = 200;
+        self.minimumLineSpacing = 0;
+        //self.itemSize = CGSizeMake(400, 520);
+        self.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        self.scrollDirection = .Horizontal
+
+    }
+    
+    
+    override func prepareLayout() {
+        super.prepareLayout()
+        
     }
     
     // http://stackoverflow.com/questions/13228600/uicollectionview-align-logic-missing-in-horizontal-paging-scrollview
@@ -42,64 +55,70 @@ class ScreenshotsCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         return contentSize;
     }
-*/
+    */
     
     /*
-    override init() {
-        super.init()
-        self.minimumInteritemSpacing = 0;
-        self.minimumLineSpacing = 40;
-        self.itemSize = CGSizeMake(400, 520);
-        self.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        /*
-        self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithCollectionViewLayout:self];
-        self.visibleIndexPathsSet = [NSMutableSet set];
-        self.isEnabled = YES;
-*/
-    }
-*/
-    
-    /*
-    override func prepareLayout() {
-        super.prepareLayout()
+    override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        var offsetAdjustment = MAXFLOAT
+        let horizontalOffset:Float = Float(proposedContentOffset.x) + 5.0
         
-        let visibleRect = CGRectInset(CGRect(origin: self.collectionView!.bounds.origin, size: self.collectionView!.frame.size), -1000, -1000)
-        var itemsInVisibleRectArray = super.layoutAttributesForElementsInRect(visibleRect)
-       
-        var itemsIndexPathsInVisibleRectSet //= NSSet.   [NSSet setWithArray:[itemsInVisibleRectArray valueForKey:@"indexPath"]];
-        
-        let *noLongerVisibleBehaviours = [self.dynamicAnimator.behaviors filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(UIAttachmentBehavior *behaviour, NSDictionary *bindings) {
-        BOOL currentlyVisible = [itemsIndexPathsInVisibleRectSet member:[[[behaviour items] firstObject] indexPath]] != nil;
-        return !currentlyVisible;
-        }]];
-        
-        [noLongerVisibleBehaviours enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
-        [self.dynamicAnimator removeBehavior:obj];
-        [self.visibleIndexPathsSet removeObject:[[[obj items] firstObject] indexPath]];
-        }];
-        
-        NSArray *newlyVisibleItems = [itemsInVisibleRectArray filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(UICollectionViewLayoutAttributes *item, NSDictionary *bindings) {
-        BOOL currentlyVisible = [self.visibleIndexPathsSet member:item.indexPath] != nil;
-        return !currentlyVisible;
-        }]];
-        
-        CGPoint touchLocation = [self.collectionView.panGestureRecognizer locationInView:self.collectionView];
-        
-        [newlyVisibleItems enumerateObjectsUsingBlock:^(UICollectionViewLayoutAttributes *item, NSUInteger idx, BOOL *stop) {
-        CGPoint center = item.center;
-        UIAttachmentBehavior *springBehaviour = [[UIAttachmentBehavior alloc] initWithItem:item attachedToAnchor:center];
-        
-        springBehaviour.length = 1.0f;
-        springBehaviour.damping = 0.8f;
-        springBehaviour.frequency = 2.f;
-        
-        [self updateItemInSpringBehavior:springBehaviour withTouchLocation:touchLocation];
-        
-        [self.dynamicAnimator addBehavior:springBehaviour];
-        [self.visibleIndexPathsSet addObject:item.indexPath];
-        }];
+        let targetRect = CGRectMake(proposedContentOffset.x, 0, self.collectionView!.bounds.size.width, self.collectionView!.bounds.size.height)
+        let array = super.layoutAttributesForElementsInRect(targetRect)
+        for layoutAttributes in array! {
+            let itemOffset:Float = Float(layoutAttributes.frame.origin.x)
+            if (abs(itemOffset - horizontalOffset) < abs(offsetAdjustment)) {
+                offsetAdjustment = itemOffset - horizontalOffset
+            }
+        }
+        return CGPointMake(proposedContentOffset.x + CGFloat(offsetAdjustment), proposedContentOffset.y)
         
     }
     */
+    
+    // https://gist.github.com/mmick66/9812223
+    override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        
+        //For this to work paging must be disabled if not the return value will be overriden down the line by the scroll view
+        if (self.collectionView!.pagingEnabled) {
+            return proposedContentOffset;
+        }
+        
+        //let collectionViewSize: CGSize = self.collectionView!.bounds.size
+        let rectBounds: CGRect = self.collectionView!.bounds
+        let halfWidth: CGFloat = rectBounds.size.width * CGFloat(0.50)
+        let proposedContentOffsetCenterX: CGFloat = proposedContentOffset.x + halfWidth
+        
+        let proposedRect: CGRect = self.collectionView!.bounds
+        
+        let attributesArray:NSArray = self.layoutAttributesForElementsInRect(proposedRect)!
+        
+        var candidateAttributes:UICollectionViewLayoutAttributes?
+        
+        
+        for layoutAttributes : AnyObject in attributesArray {
+            
+            if let _layoutAttributes = layoutAttributes as? UICollectionViewLayoutAttributes {
+                
+                if _layoutAttributes.representedElementCategory != UICollectionElementCategory.Cell {
+                    continue
+                }
+                
+                if candidateAttributes == nil {
+                    candidateAttributes = _layoutAttributes
+                    continue
+                }
+                
+                if fabsf(Float(_layoutAttributes.center.x) - Float(proposedContentOffsetCenterX)) < fabsf(Float(candidateAttributes!.center.x) - Float(proposedContentOffsetCenterX)) {
+                    candidateAttributes = _layoutAttributes
+                }
+                
+            }
+        }
+        
+        if attributesArray.count == 0 {
+            return CGPoint(x: proposedContentOffset.x - halfWidth * 2,y: proposedContentOffset.y)
+        }
+        
+        return CGPoint(x: candidateAttributes!.center.x - halfWidth, y: proposedContentOffset.y)
+    }
 }
