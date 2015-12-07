@@ -22,7 +22,7 @@
 		668FEDC51C0DF28200A9F289 /* ScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDC41C0DF28200A9F289 /* ScreenshotView.swift */; };
 		668FEDC91C0E25B800A9F289 /* CNPGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */; };
 		668FEDCB1C0E51DE00A9F289 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */; };
-		784D15D71C11E43E004DFC65 /* ScreenshotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D15D61C11E43E004DFC65 /* ScreenshotsViewController.swift */; };
+		784D15D71C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D15D61C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift */; };
 		78979C9E1BC80882003F86BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78979C9D1BC80882003F86BB /* AppDelegate.swift */; };
 		78979CA01BC80882003F86BB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78979C9F1BC80882003F86BB /* FirstViewController.swift */; };
 		78979CA21BC80882003F86BB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78979CA11BC80882003F86BB /* SecondViewController.swift */; };
@@ -106,7 +106,7 @@
 		668FEDC71C0E25B800A9F289 /* CNPGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPGridMenu.h; sourceTree = "<group>"; };
 		668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPGridMenu.m; sourceTree = "<group>"; };
 		668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		784D15D61C11E43E004DFC65 /* ScreenshotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotsViewController.swift; sourceTree = "<group>"; };
+		784D15D61C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotsCollectionViewController.swift; sourceTree = "<group>"; };
 		78979C9A1BC80882003F86BB /* Mmry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mmry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78979C9D1BC80882003F86BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78979C9F1BC80882003F86BB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 			children = (
 				78979C9D1BC80882003F86BB /* AppDelegate.swift */,
 				78979C9F1BC80882003F86BB /* FirstViewController.swift */,
-				784D15D61C11E43E004DFC65 /* ScreenshotsViewController.swift */,
+				784D15D61C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift */,
 				78979CA11BC80882003F86BB /* SecondViewController.swift */,
 				668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */,
 				78E6E5721C0F3BE40062929D /* ShowReminderViewController.swift */,
@@ -398,7 +398,7 @@
 				663C6E001C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift in Sources */,
 				663C6E021C0BAF6D000CA09C /* ScreenshotCell.swift in Sources */,
 				78979CA01BC80882003F86BB /* FirstViewController.swift in Sources */,
-				784D15D71C11E43E004DFC65 /* ScreenshotsViewController.swift in Sources */,
+				784D15D71C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift in Sources */,
 				668FEDCB1C0E51DE00A9F289 /* SettingsViewController.swift in Sources */,
 				78E6E5751C0F5B560062929D /* DatePickerDialog.swift in Sources */,
 			);

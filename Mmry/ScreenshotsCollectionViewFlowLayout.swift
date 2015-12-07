@@ -23,7 +23,7 @@ class ScreenshotsCollectionViewFlowLayout: UICollectionViewFlowLayout {
     }
     
     func setup() {
-        self.minimumInteritemSpacing = 200;
+        self.minimumInteritemSpacing = 0;
         self.minimumLineSpacing = 0;
         //self.itemSize = CGSizeMake(400, 520);
         self.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);

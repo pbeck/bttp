@@ -9,31 +9,60 @@
 import Foundation
 import UIKit
 
+// http://stackoverflow.com/questions/29779128/how-to-make-a-random-background-color-with-swift
+func randomCGFloat() -> CGFloat {
+    return CGFloat(arc4random()) / CGFloat(UInt32.max)
+}
+
+extension UIColor {
+    static func randomColor() -> UIColor {
+        let r = randomCGFloat()
+        let g = randomCGFloat()
+        let b = randomCGFloat()
+        
+        // If you wanted a random alpha, just create another
+        // random number for that too.
+        return UIColor(red: r, green: g, blue: b, alpha: 1.0)
+    }
+}
+
+
 class ScreenshotCell: UICollectionViewCell {
     var label:UILabel?
-    var screenshotView:UIView?
+    var screenshotView:UIImageView
     var createReminderButton:UIButton?
-    var screenshot:UIImage?
+    var screenshot:UIImage {
+        set {
+            self.screenshotView.image = newValue
+        }
+        
+        get {
+            return self.screenshotView.image!
+        }
+    }
         
     var screenshotSize: CGSize {
         get {
-            return CGSizeMake(self.screenshot!.size.width, self.screenshot!.size.height)
+            return CGSizeMake(self.screenshot.size.width, self.screenshot.size.height)
         }
     }
     
     override init(frame: CGRect) {
+        self.screenshotView = UIImageView()
         super.init(frame: frame)
         self.setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
+        self.screenshotView = UIImageView()
         super.init(coder: aDecoder)
         self.setup()
     }
     
     func setup() {
         // For debugging
-        // self.backgroundColor = UIColor.greenColor()
+        self.backgroundColor = UIColor.randomColor()
+        
         
         /*
         self.label = UILabel.init(frame: CGRectMake(0, 0, frame.size.width, frame.size.height))
@@ -45,26 +74,21 @@ class ScreenshotCell: UICollectionViewCell {
         */
         
         //self.screenshotView.bounds = CGRectInset(self.frame, 10.0, 10.0);
-    }
-    
-    func addScreenshot() {
-        screenshotView = UIImageView(image: self.screenshot)
-        screenshotView!.contentMode = .ScaleAspectFit
-        screenshotView!.opaque = true
-        screenshotView!.backgroundColor = UIColor.blueColor()
-        screenshotView!.bounds = self.bounds
-        screenshotView!.center = CGPointMake(self.contentView.frame.size.width / 2, self.contentView.frame.size.height / 2);
-        self.contentView.addSubview(screenshotView!)
         
-        /*
-        let layer = screenshotView!.layer
+        screenshotView.contentMode = .ScaleAspectFit
+        screenshotView.opaque = true
+        screenshotView.backgroundColor = UIColor.clearColor()
+        screenshotView.bounds = CGRectInset(self.bounds, 10.0, 20.0)
+        screenshotView.center = CGPointMake(self.contentView.frame.size.width / 2, self.contentView.frame.size.height / 2);
+        
+        let layer = screenshotView.layer
         layer.shadowOffset = CGSizeMake(0,1)
         layer.shadowColor = UIColor.blackColor().CGColor
-        layer.shadowRadius = 26
-        layer.shadowOpacity = 0.2
-        */
+        layer.shadowRadius = 4
+        layer.shadowOpacity = 0.4
+        
+        self.contentView.addSubview(screenshotView)
     }
-
 
     override func prepareForReuse() {
         // TODO: Clear shadow CALayer?

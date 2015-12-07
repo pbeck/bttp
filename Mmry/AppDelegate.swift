@@ -57,6 +57,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func photoLibraryDidChange(changeInfo: PHChange) {
         print("photoLibraryDidChange()")
+        /*
+        let fetchOptions:PHFetchOptions = PHFetchOptions()
+        var fetchResults:PHFetchResult
+        
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        fetchResults = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
+        
+        if(fetchResults.count > 0) {
+            fetchResults.enumerateObjectsUsingBlock { (object, _, _) in
+                if let asset = object as? PHAsset {
+                    
+                    if(isSimulator) {
+                        if asset.pixelWidth == 750 && asset.pixelHeight == 1334 {
+                            self.shots.append(ScreenshotsCollectionViewController.BCShot(creationDate: NSDate(), haveNotified: false, asset: asset, UUID: NSUUID()))
+                        }
+                    }
+                    else {
+                        if asset.mediaType == .Image && asset.mediaSubtypes == .PhotoScreenshot {
+                            self.shots.append(ScreenshotsCollectionViewController.BCShot(creationDate: NSDate(), haveNotified: false, asset: asset, UUID: NSUUID()))
+                            /*
+                            if !hasThisBeenNotified(lastAsset.creationDate!) {
+                            shots.append(BCShot(creationDate: lastAsset.creationDate!, haveNotified: false))
+                            launchNotification()
+                            }
+                            */
+                        }
+                    }
+                }
+            }
+        } else {
+            fatalError("No screenshots")
+        }
+
+        */
+        
     }
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
