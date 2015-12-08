@@ -1,9 +1,13 @@
 # Todo for beta
 
-- Fix display list of screenshots (w/ working pagning) ✔️
+- ~~Fix display list of screenshots (w/ working pagning)~~ (To be re-worked)
 - Show archive of reminders
 - Fix permissions
-- Add photos from library OR start camera (library default to only list screenshots)
+- Radial menu with latest five images (and shortcut to image library)
+- Fix appear animation (reuse "component" for action item?)
+- Add "Your upcoming reminders exist to the right"
+- Where to put access link to expired reminders? In Settings? As toolbar item?
+
 
 # Todo for release
 
@@ -13,4 +17,4 @@
 
 #Ideas
 
-* 3D Touch shortcut for creating reminder from last screenshot
+- 3D Touch shortcut for creating reminder from last screenshot

@@ -27,7 +27,7 @@ import CoreMotion
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, PHPhotoLibraryChangeObserver {
+class AppDelegate: UIResponder, UIApplicationDelegate, PHPhotoLibraryChangeObserver {
 
     var window: UIWindow?
     //var time: NSDate?
@@ -52,16 +52,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 categories: nil))
         
         PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
+        
+        
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        
+        self.updateDynamicShortcutItems()
         return true
     }
     
+    // This gets called when we return from background state and
+    // something changed in the system wide photo library.
     func photoLibraryDidChange(changeInfo: PHChange) {
         print("photoLibraryDidChange()")
-        /*
+        
         let fetchOptions:PHFetchOptions = PHFetchOptions()
         var fetchResults:PHFetchResult
         
-        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        fetchOptions.fetchLimit = 1
         fetchResults = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
         
         if(fetchResults.count > 0) {
@@ -70,28 +78,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     
                     if(isSimulator) {
                         if asset.pixelWidth == 750 && asset.pixelHeight == 1334 {
-                            self.shots.append(ScreenshotsCollectionViewController.BCShot(creationDate: NSDate(), haveNotified: false, asset: asset, UUID: NSUUID()))
+                            print("There's a new screenshot in town!")
                         }
                     }
                     else {
                         if asset.mediaType == .Image && asset.mediaSubtypes == .PhotoScreenshot {
-                            self.shots.append(ScreenshotsCollectionViewController.BCShot(creationDate: NSDate(), haveNotified: false, asset: asset, UUID: NSUUID()))
+                            print("There's a new screenshot in town!")
                             /*
-                            if !hasThisBeenNotified(lastAsset.creationDate!) {
-                            shots.append(BCShot(creationDate: lastAsset.creationDate!, haveNotified: false))
-                            launchNotification()
+                            if let viewControllers = navigationController?.viewControllers {
+                                for viewController in viewControllers {
+                                    // some process
+                                    if viewController.isKindOfClass(FirstViewController) {
+                                        let vc = self.window?.rootViewController as! FirstViewController
+                                        vc.addNewImage(self.getAssetUIImage(asset))
+                                    }
+                                } 
                             }
                             */
+                            
+                        } else {
+                            print("Something changed but that wasn't a new screenshot")
                         }
                     }
                 }
             }
-        } else {
-            fatalError("No screenshots")
         }
-
-        */
-        
+    }
+    
+    func getAssetUIImage(asset: PHAsset) -> UIImage {
+        let manager = PHImageManager.defaultManager()
+        let option = PHImageRequestOptions()
+        var image = UIImage()
+        option.synchronous = true
+        manager.requestImageForAsset(asset, targetSize: CGSize(width: 3000.0, height: 3000.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
+            image = result!
+        })
+        return image
     }
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
@@ -122,16 +144,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        print("Reload photos here")
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        //
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        self.updateDynamicShortcutItems()
     }
     
+    func updateDynamicShortcutItems() {
+        //let recentDocs = Document.recent(2)
+        var shortcutItems = [UIMutableApplicationShortcutItem]()
+        
+        for i in 0...4 {
+            shortcutItems.append(
+                UIMutableApplicationShortcutItem(
+                    type: "se.beckmancreative.mmry.shortcut",
+                    localizedTitle: "Title",
+                    localizedSubtitle: "Subtitle",
+                    icon: UIApplicationShortcutIcon(type: .Compose),
+                    userInfo: [ "url": "spaceships://documents/\(i)" ]
+                )
+            )
+        }
+        
+        UIApplication.sharedApplication().shortcutItems = shortcutItems
+    }
 }
 

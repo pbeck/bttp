@@ -33,7 +33,7 @@ class ScreenshotsCollectionViewController: NSObject, UICollectionViewDelegate, U
     }
     
     func setup() {
-        self.buildScreenshotList()
+        //self.buildScreenshotList()
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -265,7 +265,7 @@ class ScreenshotsCollectionViewController: NSObject, UICollectionViewDelegate, U
         
         notification.alertTitle = "Mmry"
         
-        let emojis = ["⏰", "🎉", "🌈"]
+        let emojis = ["⏰", "🎉", "🌈", "🕑", "📷", "⌛️", "🚀", "😺"]
         let randomIndex = Int(arc4random_uniform(UInt32(emojis.count)))
         notification.alertBody = "\(emojis[randomIndex]) There's a reminder waiting for you!"
         

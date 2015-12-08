@@ -11,6 +11,8 @@ import UIKit
 class SettingsViewController: UITableViewController {
 
     //@IBOutlet var tableView:UITableView?
+    @IBOutlet var twitterCell:UITableViewCell?
+    @IBOutlet var webView:UIWebView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,13 @@ class SettingsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let clickedCell = self.tableView.cellForRowAtIndexPath(indexPath)
+        if(clickedCell == twitterCell) {
+            self.openTwitter(self)
+        }
+    }
+    
     
     // MARK: - Navigation
 
@@ -34,7 +42,7 @@ class SettingsViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     //}
     
-    @IBAction func openTwitter() {
+    @IBAction func openTwitter(sender:AnyObject) {
         let screenName =  "pbeck"
         let appURL = NSURL(string: "twitter://user?screen_name=\(screenName)")!
         let webURL = NSURL(string: "https://twitter.com/\(screenName)")!

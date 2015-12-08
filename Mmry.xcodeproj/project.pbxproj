@@ -19,16 +19,19 @@
 		663C6E021C0BAF6D000CA09C /* ScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */; };
 		668FEDBF1C0DEA7600A9F289 /* PermissionScope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */; };
 		668FEDC01C0DEA7600A9F289 /* PermissionScope.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		668FEDC51C0DF28200A9F289 /* ScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDC41C0DF28200A9F289 /* ScreenshotView.swift */; };
 		668FEDC91C0E25B800A9F289 /* CNPGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */; };
 		668FEDCB1C0E51DE00A9F289 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */; };
 		784D15D71C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D15D61C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift */; };
 		78979C9E1BC80882003F86BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78979C9D1BC80882003F86BB /* AppDelegate.swift */; };
 		78979CA01BC80882003F86BB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78979C9F1BC80882003F86BB /* FirstViewController.swift */; };
-		78979CA21BC80882003F86BB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78979CA11BC80882003F86BB /* SecondViewController.swift */; };
 		78979CA51BC80882003F86BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78979CA31BC80882003F86BB /* Main.storyboard */; };
 		78979CA71BC80882003F86BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78979CA61BC80882003F86BB /* Assets.xcassets */; };
 		78979CAA1BC80882003F86BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78979CA81BC80882003F86BB /* LaunchScreen.storyboard */; };
+		78E49BA01C16F7AD0007F3DA /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 78E49B9F1C16F7AD0007F3DA /* about.html */; };
+		78E49BA21C170B2B0007F3DA /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E49BA11C170B2B0007F3DA /* AboutViewController.swift */; };
+		78E49BCE1C1719B00007F3DA /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E49BCD1C1719B00007F3DA /* ActionViewController.swift */; };
+		78E49BD11C1719B00007F3DA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E49BCF1C1719B00007F3DA /* MainInterface.storyboard */; };
+		78E49BD51C1719B00007F3DA /* MmryAction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 78E49BCB1C1719B00007F3DA /* MmryAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		78E6E5731C0F3BE40062929D /* ShowReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E6E5721C0F3BE40062929D /* ShowReminderViewController.swift */; };
 		78E6E5751C0F5B560062929D /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E6E5741C0F5B560062929D /* DatePickerDialog.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +50,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6632F0751C0EE43A000D084F;
 			remoteInfo = "Mmry Apple Watch";
+		};
+		78E49BD31C1719B00007F3DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78979C921BC80882003F86BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78E49BCA1C1719B00007F3DA;
+			remoteInfo = MmryAction;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -84,6 +94,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		78E49BB51C1718B70007F3DA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				78E49BD51C1719B00007F3DA /* MmryAction.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -101,7 +122,6 @@
 		663C6DFF1C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotCell.swift; sourceTree = "<group>"; };
 		668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PermissionScope.framework; path = Carthage/Build/iOS/PermissionScope.framework; sourceTree = "<group>"; };
-		668FEDC41C0DF28200A9F289 /* ScreenshotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotView.swift; sourceTree = "<group>"; };
 		668FEDC61C0E25B800A9F289 /* Mmry-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mmry-Bridging-Header.h"; sourceTree = "<group>"; };
 		668FEDC71C0E25B800A9F289 /* CNPGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPGridMenu.h; sourceTree = "<group>"; };
 		668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPGridMenu.m; sourceTree = "<group>"; };
@@ -110,11 +130,16 @@
 		78979C9A1BC80882003F86BB /* Mmry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mmry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78979C9D1BC80882003F86BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78979C9F1BC80882003F86BB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		78979CA11BC80882003F86BB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		78979CA41BC80882003F86BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78979CA61BC80882003F86BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78979CA91BC80882003F86BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78979CAB1BC80882003F86BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78E49B9F1C16F7AD0007F3DA /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		78E49BA11C170B2B0007F3DA /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		78E49BCB1C1719B00007F3DA /* MmryAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MmryAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		78E49BCD1C1719B00007F3DA /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		78E49BD01C1719B00007F3DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		78E49BD21C1719B00007F3DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78E6E5721C0F3BE40062929D /* ShowReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowReminderViewController.swift; sourceTree = "<group>"; };
 		78E6E5741C0F5B560062929D /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +157,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				668FEDBF1C0DEA7600A9F289 /* PermissionScope.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78E49BC81C1719B00007F3DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +215,7 @@
 				78979C9C1BC80882003F86BB /* Mmry */,
 				6632F0771C0EE43A000D084F /* Mmry Apple Watch */,
 				6632F0861C0EE43A000D084F /* Mmry Apple Watch Extension */,
+				78E49BCC1C1719B00007F3DA /* MmryAction */,
 				668FEDC21C0DEA8900A9F289 /* Frameworks */,
 				78979C9B1BC80882003F86BB /* Products */,
 			);
@@ -194,6 +227,7 @@
 				78979C9A1BC80882003F86BB /* Mmry.app */,
 				6632F0761C0EE43A000D084F /* Mmry Apple Watch.app */,
 				6632F0821C0EE43A000D084F /* Mmry Apple Watch Extension.appex */,
+				78E49BCB1C1719B00007F3DA /* MmryAction.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,10 +238,9 @@
 				78979C9D1BC80882003F86BB /* AppDelegate.swift */,
 				78979C9F1BC80882003F86BB /* FirstViewController.swift */,
 				784D15D61C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift */,
-				78979CA11BC80882003F86BB /* SecondViewController.swift */,
 				668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */,
+				78E49BA11C170B2B0007F3DA /* AboutViewController.swift */,
 				78E6E5721C0F3BE40062929D /* ShowReminderViewController.swift */,
-				668FEDC41C0DF28200A9F289 /* ScreenshotView.swift */,
 				663C6DFF1C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift */,
 				663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */,
 				668FEDC71C0E25B800A9F289 /* CNPGridMenu.h */,
@@ -218,8 +251,19 @@
 				78979CA81BC80882003F86BB /* LaunchScreen.storyboard */,
 				78979CAB1BC80882003F86BB /* Info.plist */,
 				668FEDC61C0E25B800A9F289 /* Mmry-Bridging-Header.h */,
+				78E49B9F1C16F7AD0007F3DA /* about.html */,
 			);
 			path = Mmry;
+			sourceTree = "<group>";
+		};
+		78E49BCC1C1719B00007F3DA /* MmryAction */ = {
+			isa = PBXGroup;
+			children = (
+				78E49BCD1C1719B00007F3DA /* ActionViewController.swift */,
+				78E49BCF1C1719B00007F3DA /* MainInterface.storyboard */,
+				78E49BD21C1719B00007F3DA /* Info.plist */,
+			);
+			path = MmryAction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,16 +313,35 @@
 				663C6DFE1C0B393D000CA09C /* Embed Watch Content */,
 				668FEDC11C0DEA7600A9F289 /* Embed Frameworks */,
 				668FEDC31C0DEAA500A9F289 /* ShellScript */,
+				78E49BB51C1718B70007F3DA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				6632F0931C0EE43A000D084F /* PBXTargetDependency */,
+				78E49BD41C1719B00007F3DA /* PBXTargetDependency */,
 			);
 			name = Mmry;
 			productName = Mmry;
 			productReference = 78979C9A1BC80882003F86BB /* Mmry.app */;
 			productType = "com.apple.product-type.application";
+		};
+		78E49BCA1C1719B00007F3DA /* MmryAction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78E49BD61C1719B10007F3DA /* Build configuration list for PBXNativeTarget "MmryAction" */;
+			buildPhases = (
+				78E49BC71C1719B00007F3DA /* Sources */,
+				78E49BC81C1719B00007F3DA /* Frameworks */,
+				78E49BC91C1719B00007F3DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MmryAction;
+			productName = MmryAction;
+			productReference = 78E49BCB1C1719B00007F3DA /* MmryAction.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -306,6 +369,10 @@
 							};
 						};
 					};
+					78E49BCA1C1719B00007F3DA = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = NGB32TH254;
+					};
 				};
 			};
 			buildConfigurationList = 78979C951BC80882003F86BB /* Build configuration list for PBXProject "Mmry" */;
@@ -324,6 +391,7 @@
 				78979C991BC80882003F86BB /* Mmry */,
 				6632F0751C0EE43A000D084F /* Mmry Apple Watch */,
 				6632F0811C0EE43A000D084F /* Mmry Apple Watch Extension */,
+				78E49BCA1C1719B00007F3DA /* MmryAction */,
 			);
 		};
 /* End PBXProject section */
@@ -350,9 +418,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E49BA01C16F7AD0007F3DA /* about.html in Resources */,
 				78979CAA1BC80882003F86BB /* LaunchScreen.storyboard in Resources */,
 				78979CA71BC80882003F86BB /* Assets.xcassets in Resources */,
 				78979CA51BC80882003F86BB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78E49BC91C1719B00007F3DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78E49BD11C1719B00007F3DA /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,8 +468,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				78E6E5731C0F3BE40062929D /* ShowReminderViewController.swift in Sources */,
-				668FEDC51C0DF28200A9F289 /* ScreenshotView.swift in Sources */,
-				78979CA21BC80882003F86BB /* SecondViewController.swift in Sources */,
 				78979C9E1BC80882003F86BB /* AppDelegate.swift in Sources */,
 				668FEDC91C0E25B800A9F289 /* CNPGridMenu.m in Sources */,
 				663C6E001C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift in Sources */,
@@ -400,7 +475,16 @@
 				78979CA01BC80882003F86BB /* FirstViewController.swift in Sources */,
 				784D15D71C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift in Sources */,
 				668FEDCB1C0E51DE00A9F289 /* SettingsViewController.swift in Sources */,
+				78E49BA21C170B2B0007F3DA /* AboutViewController.swift in Sources */,
 				78E6E5751C0F5B560062929D /* DatePickerDialog.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78E49BC71C1719B00007F3DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78E49BCE1C1719B00007F3DA /* ActionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +500,11 @@
 			isa = PBXTargetDependency;
 			target = 6632F0751C0EE43A000D084F /* Mmry Apple Watch */;
 			targetProxy = 6632F0921C0EE43A000D084F /* PBXContainerItemProxy */;
+		};
+		78E49BD41C1719B00007F3DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78E49BCA1C1719B00007F3DA /* MmryAction */;
+			targetProxy = 78E49BD31C1719B00007F3DA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -442,6 +531,14 @@
 				78979CA91BC80882003F86BB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		78E49BCF1C1719B00007F3DA /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78E49BD01C1719B00007F3DA /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -599,6 +696,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -621,6 +719,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -632,6 +731,34 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mmry/Mmry-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		78E49BD71C1719B10007F3DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = MmryAction/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.mmry.MmryAction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		78E49BD81C1719B10007F3DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = MmryAction/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.mmry.MmryAction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -673,6 +800,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		78E49BD61C1719B10007F3DA /* Build configuration list for PBXNativeTarget "MmryAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78E49BD71C1719B10007F3DA /* Debug */,
+				78E49BD81C1719B10007F3DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
