@@ -53,12 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PHPhotoLibraryChangeObser
         
         PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
         
-        
-        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
-        
         self.updateDynamicShortcutItems()
         return true
     }
+    
+    
     
     // This gets called when we return from background state and
     // something changed in the system wide photo library.

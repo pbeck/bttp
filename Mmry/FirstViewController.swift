@@ -20,13 +20,14 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
     @IBOutlet var startImageView:UIImageView?
     @IBOutlet var addButton:UIButton?
     
+    var addPhotoController:AddPhotoController?
     var screenshotsCollectionController = ScreenshotsCollectionViewController()
     let pscope = PermissionScope()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setNeedsStatusBarAppearanceUpdate()
+        //self.setNeedsStatusBarAppearanceUpdate()
         
         pscope.addPermission(PhotosPermission(),
             message: "Photos")
@@ -63,9 +64,18 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
     }
     
     func addNewImage(image:UIImage) {
-        let imageView = UIImageView(image: image)
-        UIView.transitionWithView(self.view, duration: 1.2, options: UIViewAnimationOptions.CurveEaseInOut,
-            animations: {self.view.addSubview(imageView)}, completion: nil)
+        
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = kCATransitionFade
+        
+        self.view.layer.addAnimation(transition, forKey: kCATransition)
+        
+        self.addPhotoController = AddPhotoController(withImage: image)
+        self.addPhotoController?.modalPresentationStyle = .OverFullScreen
+        self.addPhotoController?.modalTransitionStyle = .CrossDissolve
+        self.presentViewController(self.addPhotoController!, animated: false, completion: nil)
+        
     }
     
     

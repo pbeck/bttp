@@ -7,14 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6632F07A1C0EE43A000D084F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6632F0781C0EE43A000D084F /* Interface.storyboard */; };
-		6632F07C1C0EE43A000D084F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6632F07B1C0EE43A000D084F /* Assets.xcassets */; };
-		6632F0831C0EE43A000D084F /* Mmry Apple Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6632F0821C0EE43A000D084F /* Mmry Apple Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		6632F08A1C0EE43A000D084F /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6632F0891C0EE43A000D084F /* InterfaceController.swift */; };
-		6632F08C1C0EE43A000D084F /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6632F08B1C0EE43A000D084F /* ExtensionDelegate.swift */; };
-		6632F08E1C0EE43A000D084F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6632F08D1C0EE43A000D084F /* NotificationController.swift */; };
-		6632F0901C0EE43A000D084F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6632F08F1C0EE43A000D084F /* Assets.xcassets */; };
-		6632F0941C0EE43A000D084F /* Mmry Apple Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6632F0761C0EE43A000D084F /* Mmry Apple Watch.app */; };
 		663C6E001C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C6DFF1C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift */; };
 		663C6E021C0BAF6D000CA09C /* ScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */; };
 		668FEDBF1C0DEA7600A9F289 /* PermissionScope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */; };
@@ -22,6 +14,39 @@
 		668FEDC91C0E25B800A9F289 /* CNPGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */; };
 		668FEDCB1C0E51DE00A9F289 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */; };
 		784D15D71C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D15D61C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift */; };
+		7876D2AA1C1825A400AE2B42 /* AddPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2A91C1825A400AE2B42 /* AddPhotoController.swift */; };
+		7876D2CA1C18314A00AE2B42 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2AC1C18314A00AE2B42 /* AsyncButton.swift */; };
+		7876D2CB1C18314A00AE2B42 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2AD1C18314A00AE2B42 /* AsyncImageView.swift */; };
+		7876D2CC1C18314A00AE2B42 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2AE1C18314A00AE2B42 /* AutoTextView.swift */; };
+		7876D2CD1C18314A00AE2B42 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2AF1C18314A00AE2B42 /* BlurView.swift */; };
+		7876D2CE1C18314A00AE2B42 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2B01C18314A00AE2B42 /* DesignableButton.swift */; };
+		7876D2CF1C18314A00AE2B42 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2B11C18314A00AE2B42 /* DesignableImageView.swift */; };
+		7876D2D01C18314A00AE2B42 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2B21C18314A00AE2B42 /* DesignableLabel.swift */; };
+		7876D2D11C18314A00AE2B42 /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2B31C18314A00AE2B42 /* DesignableTabBarController.swift */; };
+		7876D2D21C18314A00AE2B42 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2B41C18314A00AE2B42 /* DesignableTextField.swift */; };
+		7876D2D31C18314A00AE2B42 /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2B51C18314A00AE2B42 /* DesignableTextView.swift */; };
+		7876D2D41C18314A00AE2B42 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2B61C18314A00AE2B42 /* DesignableView.swift */; };
+		7876D2D51C18314A00AE2B42 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2B71C18314A00AE2B42 /* ImageLoader.swift */; };
+		7876D2D61C18314A00AE2B42 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7876D2B81C18314A00AE2B42 /* Info.plist */; };
+		7876D2D71C18314A00AE2B42 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2B91C18314A00AE2B42 /* KeyboardLayoutConstraint.swift */; };
+		7876D2D81C18314A00AE2B42 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2BA1C18314A00AE2B42 /* LoadingView.swift */; };
+		7876D2D91C18314A00AE2B42 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7876D2BB1C18314A00AE2B42 /* LoadingView.xib */; };
+		7876D2DA1C18314A00AE2B42 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2BC1C18314A00AE2B42 /* Misc.swift */; };
+		7876D2DB1C18314A00AE2B42 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2BD1C18314A00AE2B42 /* SoundPlayer.swift */; };
+		7876D2DC1C18314A00AE2B42 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2BF1C18314A00AE2B42 /* Spring.swift */; };
+		7876D2DD1C18314A00AE2B42 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2C01C18314A00AE2B42 /* SpringAnimation.swift */; };
+		7876D2DE1C18314A00AE2B42 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2C11C18314A00AE2B42 /* SpringButton.swift */; };
+		7876D2DF1C18314A00AE2B42 /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2C21C18314A00AE2B42 /* SpringImageView.swift */; };
+		7876D2E01C18314A00AE2B42 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2C31C18314A00AE2B42 /* SpringLabel.swift */; };
+		7876D2E11C18314A00AE2B42 /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2C41C18314A00AE2B42 /* SpringTextField.swift */; };
+		7876D2E21C18314A00AE2B42 /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2C51C18314A00AE2B42 /* SpringTextView.swift */; };
+		7876D2E31C18314A00AE2B42 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2C61C18314A00AE2B42 /* SpringView.swift */; };
+		7876D2E41C18314A00AE2B42 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2C71C18314A00AE2B42 /* TransitionManager.swift */; };
+		7876D2E51C18314A00AE2B42 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2C81C18314A00AE2B42 /* TransitionZoom.swift */; };
+		7876D2E61C18314A00AE2B42 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2C91C18314A00AE2B42 /* UnwindSegue.swift */; };
+		7876D2EB1C18381200AE2B42 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7876D2E91C1836B500AE2B42 /* CoreMotion.framework */; };
+		789105B11C1845AD008D2D2A /* RootNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789105B01C1845AD008D2D2A /* RootNavController.swift */; };
+		789105B31C185209008D2D2A /* TinyPhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789105B21C185209008D2D2A /* TinyPhotoLibraryViewController.swift */; };
 		78979C9E1BC80882003F86BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78979C9D1BC80882003F86BB /* AppDelegate.swift */; };
 		78979CA01BC80882003F86BB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78979C9F1BC80882003F86BB /* FirstViewController.swift */; };
 		78979CA51BC80882003F86BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78979CA31BC80882003F86BB /* Main.storyboard */; };
@@ -29,56 +54,17 @@
 		78979CAA1BC80882003F86BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78979CA81BC80882003F86BB /* LaunchScreen.storyboard */; };
 		78E49BA01C16F7AD0007F3DA /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 78E49B9F1C16F7AD0007F3DA /* about.html */; };
 		78E49BA21C170B2B0007F3DA /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E49BA11C170B2B0007F3DA /* AboutViewController.swift */; };
-		78E49BCE1C1719B00007F3DA /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E49BCD1C1719B00007F3DA /* ActionViewController.swift */; };
-		78E49BD11C1719B00007F3DA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E49BCF1C1719B00007F3DA /* MainInterface.storyboard */; };
-		78E49BD51C1719B00007F3DA /* MmryAction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 78E49BCB1C1719B00007F3DA /* MmryAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		78E6E5731C0F3BE40062929D /* ShowReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E6E5721C0F3BE40062929D /* ShowReminderViewController.swift */; };
 		78E6E5751C0F5B560062929D /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E6E5741C0F5B560062929D /* DatePickerDialog.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6632F0841C0EE43A000D084F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78979C921BC80882003F86BB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6632F0811C0EE43A000D084F;
-			remoteInfo = "Mmry Apple Watch Extension";
-		};
-		6632F0921C0EE43A000D084F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78979C921BC80882003F86BB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6632F0751C0EE43A000D084F;
-			remoteInfo = "Mmry Apple Watch";
-		};
-		78E49BD31C1719B00007F3DA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78979C921BC80882003F86BB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 78E49BCA1C1719B00007F3DA;
-			remoteInfo = MmryAction;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		6632F09A1C0EE43A000D084F /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				6632F0831C0EE43A000D084F /* Mmry Apple Watch Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		663C6DFE1C0B393D000CA09C /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				6632F0941C0EE43A000D084F /* Mmry Apple Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,7 +86,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				78E49BD51C1719B00007F3DA /* MmryAction.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,17 +93,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6632F0761C0EE43A000D084F /* Mmry Apple Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mmry Apple Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6632F0791C0EE43A000D084F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		6632F07B1C0EE43A000D084F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6632F07D1C0EE43A000D084F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6632F0821C0EE43A000D084F /* Mmry Apple Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Mmry Apple Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6632F0881C0EE43A000D084F /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		6632F0891C0EE43A000D084F /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		6632F08B1C0EE43A000D084F /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		6632F08D1C0EE43A000D084F /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		6632F08F1C0EE43A000D084F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6632F0911C0EE43A000D084F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		663C6DFF1C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotCell.swift; sourceTree = "<group>"; };
 		668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PermissionScope.framework; path = Carthage/Build/iOS/PermissionScope.framework; sourceTree = "<group>"; };
@@ -127,6 +101,40 @@
 		668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPGridMenu.m; sourceTree = "<group>"; };
 		668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		784D15D61C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotsCollectionViewController.swift; sourceTree = "<group>"; };
+		7876D2A91C1825A400AE2B42 /* AddPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoController.swift; sourceTree = "<group>"; };
+		7876D2AC1C18314A00AE2B42 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
+		7876D2AD1C18314A00AE2B42 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		7876D2AE1C18314A00AE2B42 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
+		7876D2AF1C18314A00AE2B42 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		7876D2B01C18314A00AE2B42 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		7876D2B11C18314A00AE2B42 /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
+		7876D2B21C18314A00AE2B42 /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
+		7876D2B31C18314A00AE2B42 /* DesignableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarController.swift; sourceTree = "<group>"; };
+		7876D2B41C18314A00AE2B42 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		7876D2B51C18314A00AE2B42 /* DesignableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextView.swift; sourceTree = "<group>"; };
+		7876D2B61C18314A00AE2B42 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		7876D2B71C18314A00AE2B42 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		7876D2B81C18314A00AE2B42 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7876D2B91C18314A00AE2B42 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		7876D2BA1C18314A00AE2B42 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		7876D2BB1C18314A00AE2B42 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		7876D2BC1C18314A00AE2B42 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		7876D2BD1C18314A00AE2B42 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		7876D2BE1C18314A00AE2B42 /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spring.h; sourceTree = "<group>"; };
+		7876D2BF1C18314A00AE2B42 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		7876D2C01C18314A00AE2B42 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		7876D2C11C18314A00AE2B42 /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
+		7876D2C21C18314A00AE2B42 /* SpringImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringImageView.swift; sourceTree = "<group>"; };
+		7876D2C31C18314A00AE2B42 /* SpringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringLabel.swift; sourceTree = "<group>"; };
+		7876D2C41C18314A00AE2B42 /* SpringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextField.swift; sourceTree = "<group>"; };
+		7876D2C51C18314A00AE2B42 /* SpringTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextView.swift; sourceTree = "<group>"; };
+		7876D2C61C18314A00AE2B42 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		7876D2C71C18314A00AE2B42 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		7876D2C81C18314A00AE2B42 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
+		7876D2C91C18314A00AE2B42 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		7876D2E91C1836B500AE2B42 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		789105B01C1845AD008D2D2A /* RootNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavController.swift; sourceTree = "<group>"; };
+		789105B21C185209008D2D2A /* TinyPhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyPhotoLibraryViewController.swift; sourceTree = "<group>"; };
 		78979C9A1BC80882003F86BB /* Mmry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mmry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78979C9D1BC80882003F86BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78979C9F1BC80882003F86BB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -136,86 +144,73 @@
 		78979CAB1BC80882003F86BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78E49B9F1C16F7AD0007F3DA /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		78E49BA11C170B2B0007F3DA /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		78E49BCB1C1719B00007F3DA /* MmryAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MmryAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		78E49BCD1C1719B00007F3DA /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
-		78E49BD01C1719B00007F3DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		78E49BD21C1719B00007F3DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78E6E5721C0F3BE40062929D /* ShowReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowReminderViewController.swift; sourceTree = "<group>"; };
 		78E6E5741C0F5B560062929D /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6632F07F1C0EE43A000D084F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		78979C971BC80882003F86BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7876D2EB1C18381200AE2B42 /* CoreMotion.framework in Frameworks */,
 				668FEDBF1C0DEA7600A9F289 /* PermissionScope.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78E49BC81C1719B00007F3DA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6632F0771C0EE43A000D084F /* Mmry Apple Watch */ = {
-			isa = PBXGroup;
-			children = (
-				6632F0781C0EE43A000D084F /* Interface.storyboard */,
-				6632F07B1C0EE43A000D084F /* Assets.xcassets */,
-				6632F07D1C0EE43A000D084F /* Info.plist */,
-			);
-			path = "Mmry Apple Watch";
-			sourceTree = "<group>";
-		};
-		6632F0861C0EE43A000D084F /* Mmry Apple Watch Extension */ = {
-			isa = PBXGroup;
-			children = (
-				6632F0891C0EE43A000D084F /* InterfaceController.swift */,
-				6632F08B1C0EE43A000D084F /* ExtensionDelegate.swift */,
-				6632F08D1C0EE43A000D084F /* NotificationController.swift */,
-				6632F08F1C0EE43A000D084F /* Assets.xcassets */,
-				6632F0911C0EE43A000D084F /* Info.plist */,
-				6632F0871C0EE43A000D084F /* Supporting Files */,
-			);
-			path = "Mmry Apple Watch Extension";
-			sourceTree = "<group>";
-		};
-		6632F0871C0EE43A000D084F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6632F0881C0EE43A000D084F /* PushNotificationPayload.apns */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		668FEDC21C0DEA8900A9F289 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7876D2E91C1836B500AE2B42 /* CoreMotion.framework */,
 				668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7876D2AB1C18314A00AE2B42 /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				7876D2AC1C18314A00AE2B42 /* AsyncButton.swift */,
+				7876D2AD1C18314A00AE2B42 /* AsyncImageView.swift */,
+				7876D2AE1C18314A00AE2B42 /* AutoTextView.swift */,
+				7876D2AF1C18314A00AE2B42 /* BlurView.swift */,
+				7876D2B01C18314A00AE2B42 /* DesignableButton.swift */,
+				7876D2B11C18314A00AE2B42 /* DesignableImageView.swift */,
+				7876D2B21C18314A00AE2B42 /* DesignableLabel.swift */,
+				7876D2B31C18314A00AE2B42 /* DesignableTabBarController.swift */,
+				7876D2B41C18314A00AE2B42 /* DesignableTextField.swift */,
+				7876D2B51C18314A00AE2B42 /* DesignableTextView.swift */,
+				7876D2B61C18314A00AE2B42 /* DesignableView.swift */,
+				7876D2B71C18314A00AE2B42 /* ImageLoader.swift */,
+				7876D2B81C18314A00AE2B42 /* Info.plist */,
+				7876D2B91C18314A00AE2B42 /* KeyboardLayoutConstraint.swift */,
+				7876D2BA1C18314A00AE2B42 /* LoadingView.swift */,
+				7876D2BB1C18314A00AE2B42 /* LoadingView.xib */,
+				7876D2BC1C18314A00AE2B42 /* Misc.swift */,
+				7876D2BD1C18314A00AE2B42 /* SoundPlayer.swift */,
+				7876D2BE1C18314A00AE2B42 /* Spring.h */,
+				7876D2BF1C18314A00AE2B42 /* Spring.swift */,
+				7876D2C01C18314A00AE2B42 /* SpringAnimation.swift */,
+				7876D2C11C18314A00AE2B42 /* SpringButton.swift */,
+				7876D2C21C18314A00AE2B42 /* SpringImageView.swift */,
+				7876D2C31C18314A00AE2B42 /* SpringLabel.swift */,
+				7876D2C41C18314A00AE2B42 /* SpringTextField.swift */,
+				7876D2C51C18314A00AE2B42 /* SpringTextView.swift */,
+				7876D2C61C18314A00AE2B42 /* SpringView.swift */,
+				7876D2C71C18314A00AE2B42 /* TransitionManager.swift */,
+				7876D2C81C18314A00AE2B42 /* TransitionZoom.swift */,
+				7876D2C91C18314A00AE2B42 /* UnwindSegue.swift */,
+			);
+			path = Spring;
 			sourceTree = "<group>";
 		};
 		78979C911BC80882003F86BB = {
 			isa = PBXGroup;
 			children = (
 				78979C9C1BC80882003F86BB /* Mmry */,
-				6632F0771C0EE43A000D084F /* Mmry Apple Watch */,
-				6632F0861C0EE43A000D084F /* Mmry Apple Watch Extension */,
-				78E49BCC1C1719B00007F3DA /* MmryAction */,
 				668FEDC21C0DEA8900A9F289 /* Frameworks */,
 				78979C9B1BC80882003F86BB /* Products */,
 			);
@@ -225,9 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				78979C9A1BC80882003F86BB /* Mmry.app */,
-				6632F0761C0EE43A000D084F /* Mmry Apple Watch.app */,
-				6632F0821C0EE43A000D084F /* Mmry Apple Watch Extension.appex */,
-				78E49BCB1C1719B00007F3DA /* MmryAction.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -235,8 +227,11 @@
 		78979C9C1BC80882003F86BB /* Mmry */ = {
 			isa = PBXGroup;
 			children = (
+				7876D2AB1C18314A00AE2B42 /* Spring */,
 				78979C9D1BC80882003F86BB /* AppDelegate.swift */,
 				78979C9F1BC80882003F86BB /* FirstViewController.swift */,
+				789105B21C185209008D2D2A /* TinyPhotoLibraryViewController.swift */,
+				7876D2A91C1825A400AE2B42 /* AddPhotoController.swift */,
 				784D15D61C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift */,
 				668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */,
 				78E49BA11C170B2B0007F3DA /* AboutViewController.swift */,
@@ -247,6 +242,7 @@
 				668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */,
 				78E6E5741C0F5B560062929D /* DatePickerDialog.swift */,
 				78979CA31BC80882003F86BB /* Main.storyboard */,
+				789105B01C1845AD008D2D2A /* RootNavController.swift */,
 				78979CA61BC80882003F86BB /* Assets.xcassets */,
 				78979CA81BC80882003F86BB /* LaunchScreen.storyboard */,
 				78979CAB1BC80882003F86BB /* Info.plist */,
@@ -256,53 +252,9 @@
 			path = Mmry;
 			sourceTree = "<group>";
 		};
-		78E49BCC1C1719B00007F3DA /* MmryAction */ = {
-			isa = PBXGroup;
-			children = (
-				78E49BCD1C1719B00007F3DA /* ActionViewController.swift */,
-				78E49BCF1C1719B00007F3DA /* MainInterface.storyboard */,
-				78E49BD21C1719B00007F3DA /* Info.plist */,
-			);
-			path = MmryAction;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6632F0751C0EE43A000D084F /* Mmry Apple Watch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6632F09B1C0EE43A000D084F /* Build configuration list for PBXNativeTarget "Mmry Apple Watch" */;
-			buildPhases = (
-				6632F0741C0EE43A000D084F /* Resources */,
-				6632F09A1C0EE43A000D084F /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6632F0851C0EE43A000D084F /* PBXTargetDependency */,
-			);
-			name = "Mmry Apple Watch";
-			productName = "Mmry Apple Watch";
-			productReference = 6632F0761C0EE43A000D084F /* Mmry Apple Watch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		6632F0811C0EE43A000D084F /* Mmry Apple Watch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6632F0991C0EE43A000D084F /* Build configuration list for PBXNativeTarget "Mmry Apple Watch Extension" */;
-			buildPhases = (
-				6632F07E1C0EE43A000D084F /* Sources */,
-				6632F07F1C0EE43A000D084F /* Frameworks */,
-				6632F0801C0EE43A000D084F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Mmry Apple Watch Extension";
-			productName = "Mmry Apple Watch Extension";
-			productReference = 6632F0821C0EE43A000D084F /* Mmry Apple Watch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 		78979C991BC80882003F86BB /* Mmry */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78979CAE1BC80882003F86BB /* Build configuration list for PBXNativeTarget "Mmry" */;
@@ -318,30 +270,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				6632F0931C0EE43A000D084F /* PBXTargetDependency */,
-				78E49BD41C1719B00007F3DA /* PBXTargetDependency */,
 			);
 			name = Mmry;
 			productName = Mmry;
 			productReference = 78979C9A1BC80882003F86BB /* Mmry.app */;
 			productType = "com.apple.product-type.application";
-		};
-		78E49BCA1C1719B00007F3DA /* MmryAction */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 78E49BD61C1719B10007F3DA /* Build configuration list for PBXNativeTarget "MmryAction" */;
-			buildPhases = (
-				78E49BC71C1719B00007F3DA /* Sources */,
-				78E49BC81C1719B00007F3DA /* Frameworks */,
-				78E49BC91C1719B00007F3DA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MmryAction;
-			productName = MmryAction;
-			productReference = 78E49BCB1C1719B00007F3DA /* MmryAction.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -353,13 +286,6 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Beckman Creative";
 				TargetAttributes = {
-					6632F0751C0EE43A000D084F = {
-						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = NGB32TH254;
-					};
-					6632F0811C0EE43A000D084F = {
-						CreatedOnToolsVersion = 7.1.1;
-					};
 					78979C991BC80882003F86BB = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = NGB32TH254;
@@ -368,10 +294,6 @@
 								enabled = 1;
 							};
 						};
-					};
-					78E49BCA1C1719B00007F3DA = {
-						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = NGB32TH254;
 					};
 				};
 			};
@@ -389,31 +311,11 @@
 			projectRoot = "";
 			targets = (
 				78979C991BC80882003F86BB /* Mmry */,
-				6632F0751C0EE43A000D084F /* Mmry Apple Watch */,
-				6632F0811C0EE43A000D084F /* Mmry Apple Watch Extension */,
-				78E49BCA1C1719B00007F3DA /* MmryAction */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6632F0741C0EE43A000D084F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6632F07C1C0EE43A000D084F /* Assets.xcassets in Resources */,
-				6632F07A1C0EE43A000D084F /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6632F0801C0EE43A000D084F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6632F0901C0EE43A000D084F /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		78979C981BC80882003F86BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,15 +323,9 @@
 				78E49BA01C16F7AD0007F3DA /* about.html in Resources */,
 				78979CAA1BC80882003F86BB /* LaunchScreen.storyboard in Resources */,
 				78979CA71BC80882003F86BB /* Assets.xcassets in Resources */,
+				7876D2D91C18314A00AE2B42 /* LoadingView.xib in Resources */,
+				7876D2D61C18314A00AE2B42 /* Info.plist in Resources */,
 				78979CA51BC80882003F86BB /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78E49BC91C1719B00007F3DA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				78E49BD11C1719B00007F3DA /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,70 +349,56 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6632F07E1C0EE43A000D084F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6632F08E1C0EE43A000D084F /* NotificationController.swift in Sources */,
-				6632F08C1C0EE43A000D084F /* ExtensionDelegate.swift in Sources */,
-				6632F08A1C0EE43A000D084F /* InterfaceController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		78979C961BC80882003F86BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7876D2E21C18314A00AE2B42 /* SpringTextView.swift in Sources */,
+				7876D2D11C18314A00AE2B42 /* DesignableTabBarController.swift in Sources */,
+				7876D2CB1C18314A00AE2B42 /* AsyncImageView.swift in Sources */,
 				78E6E5731C0F3BE40062929D /* ShowReminderViewController.swift in Sources */,
+				789105B31C185209008D2D2A /* TinyPhotoLibraryViewController.swift in Sources */,
+				7876D2D31C18314A00AE2B42 /* DesignableTextView.swift in Sources */,
+				7876D2CD1C18314A00AE2B42 /* BlurView.swift in Sources */,
+				7876D2DA1C18314A00AE2B42 /* Misc.swift in Sources */,
+				7876D2DC1C18314A00AE2B42 /* Spring.swift in Sources */,
+				7876D2D71C18314A00AE2B42 /* KeyboardLayoutConstraint.swift in Sources */,
+				7876D2DE1C18314A00AE2B42 /* SpringButton.swift in Sources */,
+				7876D2E31C18314A00AE2B42 /* SpringView.swift in Sources */,
 				78979C9E1BC80882003F86BB /* AppDelegate.swift in Sources */,
+				7876D2CA1C18314A00AE2B42 /* AsyncButton.swift in Sources */,
 				668FEDC91C0E25B800A9F289 /* CNPGridMenu.m in Sources */,
+				7876D2D21C18314A00AE2B42 /* DesignableTextField.swift in Sources */,
 				663C6E001C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift in Sources */,
 				663C6E021C0BAF6D000CA09C /* ScreenshotCell.swift in Sources */,
+				7876D2AA1C1825A400AE2B42 /* AddPhotoController.swift in Sources */,
+				7876D2CF1C18314A00AE2B42 /* DesignableImageView.swift in Sources */,
 				78979CA01BC80882003F86BB /* FirstViewController.swift in Sources */,
+				7876D2D41C18314A00AE2B42 /* DesignableView.swift in Sources */,
+				7876D2E51C18314A00AE2B42 /* TransitionZoom.swift in Sources */,
+				7876D2D51C18314A00AE2B42 /* ImageLoader.swift in Sources */,
 				784D15D71C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift in Sources */,
+				7876D2DD1C18314A00AE2B42 /* SpringAnimation.swift in Sources */,
+				789105B11C1845AD008D2D2A /* RootNavController.swift in Sources */,
+				7876D2E41C18314A00AE2B42 /* TransitionManager.swift in Sources */,
+				7876D2E61C18314A00AE2B42 /* UnwindSegue.swift in Sources */,
+				7876D2D81C18314A00AE2B42 /* LoadingView.swift in Sources */,
+				7876D2DF1C18314A00AE2B42 /* SpringImageView.swift in Sources */,
+				7876D2CE1C18314A00AE2B42 /* DesignableButton.swift in Sources */,
+				7876D2CC1C18314A00AE2B42 /* AutoTextView.swift in Sources */,
+				7876D2DB1C18314A00AE2B42 /* SoundPlayer.swift in Sources */,
 				668FEDCB1C0E51DE00A9F289 /* SettingsViewController.swift in Sources */,
 				78E49BA21C170B2B0007F3DA /* AboutViewController.swift in Sources */,
+				7876D2D01C18314A00AE2B42 /* DesignableLabel.swift in Sources */,
+				7876D2E11C18314A00AE2B42 /* SpringTextField.swift in Sources */,
 				78E6E5751C0F5B560062929D /* DatePickerDialog.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78E49BC71C1719B00007F3DA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				78E49BCE1C1719B00007F3DA /* ActionViewController.swift in Sources */,
+				7876D2E01C18314A00AE2B42 /* SpringLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		6632F0851C0EE43A000D084F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6632F0811C0EE43A000D084F /* Mmry Apple Watch Extension */;
-			targetProxy = 6632F0841C0EE43A000D084F /* PBXContainerItemProxy */;
-		};
-		6632F0931C0EE43A000D084F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6632F0751C0EE43A000D084F /* Mmry Apple Watch */;
-			targetProxy = 6632F0921C0EE43A000D084F /* PBXContainerItemProxy */;
-		};
-		78E49BD41C1719B00007F3DA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 78E49BCA1C1719B00007F3DA /* MmryAction */;
-			targetProxy = 78E49BD31C1719B00007F3DA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		6632F0781C0EE43A000D084F /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6632F0791C0EE43A000D084F /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
 		78979CA31BC80882003F86BB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -533,81 +415,9 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		78E49BCF1C1719B00007F3DA /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				78E49BD01C1719B00007F3DA /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6632F0951C0EE43A000D084F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				IBSC_MODULE = Mmry_Apple_Watch_Extension;
-				INFOPLIST_FILE = "Mmry Apple Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.mmry.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		6632F0961C0EE43A000D084F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				IBSC_MODULE = Mmry_Apple_Watch_Extension;
-				INFOPLIST_FILE = "Mmry Apple Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.mmry.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		6632F0971C0EE43A000D084F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Mmry Apple Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.mmry.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		6632F0981C0EE43A000D084F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Mmry Apple Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.mmry.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
 		78979CAC1BC80882003F86BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -696,7 +506,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -719,7 +528,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -734,55 +542,9 @@
 			};
 			name = Release;
 		};
-		78E49BD71C1719B10007F3DA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = MmryAction/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.mmry.MmryAction;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		78E49BD81C1719B10007F3DA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = MmryAction/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.mmry.MmryAction;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6632F0991C0EE43A000D084F /* Build configuration list for PBXNativeTarget "Mmry Apple Watch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6632F0971C0EE43A000D084F /* Debug */,
-				6632F0981C0EE43A000D084F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6632F09B1C0EE43A000D084F /* Build configuration list for PBXNativeTarget "Mmry Apple Watch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6632F0951C0EE43A000D084F /* Debug */,
-				6632F0961C0EE43A000D084F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		78979C951BC80882003F86BB /* Build configuration list for PBXProject "Mmry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -800,14 +562,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		78E49BD61C1719B10007F3DA /* Build configuration list for PBXNativeTarget "MmryAction" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				78E49BD71C1719B10007F3DA /* Debug */,
-				78E49BD81C1719B10007F3DA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
