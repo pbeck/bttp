@@ -9,7 +9,7 @@
         <!--Library-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Mmry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Back_to_the_Photo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -28,41 +28,73 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start-text" id="QOJ-0t-PfN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </imageView>
                                 <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="uTY-vx-8kh"/>
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="9Iu-D9-xla"/>
                                 </connections>
                             </collectionView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start-text" translatesAutoresizingMaskIntoConstraints="NO" id="QOJ-0t-PfN">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yq-D8-rBN">
-                                <rect key="frame" x="337" y="555" width="22" height="28"/>
-                                <color key="backgroundColor" red="0.94509803921568625" green="0.28242460664335667" blue="0.94509803921568625" alpha="1" colorSpace="deviceRGB"/>
-                                <color key="tintColor" red="0.82817403160000003" green="1" blue="0.12502976390000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="sample-1093-lightning-bolt-2"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cI3-vN-Mh4" customClass="DesignableButton" customModule="Back_to_the_Photo" customModuleProvider="target">
+                                <rect key="frame" x="263" y="549" width="96" height="34"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
+                                <state key="normal" title="Add Photo">
+                                    <color key="titleColor" red="0.44867750989999999" green="0.77946472170000003" blue="0.67262018290000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.44867750989562866" green="0.7794647216796875" blue="0.67262018289402525" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="qRP-uy-BqF" kind="presentation" animates="NO" id="BDp-48-4CV"/>
+                                    <segue destination="qRP-uy-BqF" kind="presentation" identifier="tpl-segue" animates="NO" id="64y-PP-PDB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgF-vh-pG2" customClass="DesignableButton" customModule="Back_to_the_Photo" customModuleProvider="target">
+                                <rect key="frame" x="145" y="549" width="106" height="34"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
+                                <state key="normal" title="From library">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addMedia:" destination="9pv-A4-QxB" eventType="touchUpInside" id="1AW-4v-zRt"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mfn-YR-adh" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="2Tw-SR-un1"/>
-                            <constraint firstItem="QOJ-0t-PfN" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="72a-Tv-G2A"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="cI3-vN-Mh4" secondAttribute="bottom" constant="20" id="3t1-be-QkX"/>
                             <constraint firstItem="mfn-YR-adh" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="8pc-bV-1ZX"/>
-                            <constraint firstItem="QOJ-0t-PfN" firstAttribute="leading" secondItem="mfn-YR-adh" secondAttribute="leading" id="CeC-bJ-iw7"/>
+                            <constraint firstItem="cI3-vN-Mh4" firstAttribute="leading" secondItem="FgF-vh-pG2" secondAttribute="trailing" constant="12" id="DAQ-Fi-bgI"/>
                             <constraint firstItem="mfn-YR-adh" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" constant="65" id="DKr-dd-C3K"/>
-                            <constraint firstItem="QOJ-0t-PfN" firstAttribute="trailing" secondItem="mfn-YR-adh" secondAttribute="trailing" id="ECX-jX-RYA"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="mfn-YR-adh" secondAttribute="bottom" id="L9q-k6-HST"/>
                             <constraint firstAttribute="trailing" secondItem="mfn-YR-adh" secondAttribute="trailing" id="SEv-Cs-9GH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cI3-vN-Mh4" secondAttribute="trailing" id="VZR-c1-HRd"/>
                             <constraint firstItem="mfn-YR-adh" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="apO-mB-fpm"/>
-                            <constraint firstItem="QOJ-0t-PfN" firstAttribute="top" secondItem="mfn-YR-adh" secondAttribute="top" id="rhQ-Tp-8Nv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9yq-D8-rBN" secondAttribute="trailing" id="y2c-cG-Jg9"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="9yq-D8-rBN" secondAttribute="bottom" constant="20" id="zt1-rs-dxe"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="FgF-vh-pG2" secondAttribute="bottom" constant="20" id="tdp-Yn-OPo"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -76,11 +108,6 @@
                         <barButtonItem key="leftBarButtonItem" image="sample-834-bolt" id="dbE-71-iQD">
                             <connections>
                                 <segue destination="LN3-NY-HUu" kind="showDetail" action="showViewController:sender:" id="hhb-rB-a97"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="K19-1Q-xal">
-                            <connections>
-                                <action selector="addMedia:" destination="9pv-A4-QxB" id="6t8-jN-rcK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -98,17 +125,17 @@
         <!--Root Nav Controller-->
         <scene sceneID="Cgh-8Q-5cP">
             <objects>
-                <navigationController id="z1E-d6-wkV" customClass="RootNavController" customModule="Mmry" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="z1E-d6-wkV" customClass="RootNavController" customModule="Back_to_the_Photo" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="zvK-v3-ufj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.57596700174825177" green="0.77525795282167831" blue="0.80120192307692306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.44867750989999999" green="0.77946472170000003" blue="0.67262018290000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" red="0.44316302909999999" green="0.44316302909999999" blue="0.44316302909999999" alpha="1" colorSpace="calibratedRGB"/>
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                         </textAttributes>
                     </navigationBar>
@@ -128,7 +155,7 @@
         <!--Settings-->
         <scene sceneID="DkZ-ge-w4f">
             <objects>
-                <tableViewController storyboardIdentifier="SettingsTable" useStoryboardIdentifierAsRestorationIdentifier="YES" clearsSelectionOnViewWillAppear="NO" id="LN3-NY-HUu" customClass="SettingsViewController" customModule="Mmry" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingsTable" useStoryboardIdentifierAsRestorationIdentifier="YES" clearsSelectionOnViewWillAppear="NO" id="LN3-NY-HUu" customClass="SettingsViewController" customModule="Back_to_the_Photo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ZxF-4o-gFm">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,7 +171,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="QuickAdd only for screenshots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ino-iD-0zQ">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Only screenshots in QuickAdd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ino-iD-0zQ">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -279,7 +306,7 @@
         <!--About View Controller-->
         <scene sceneID="sm0-ND-IHc">
             <objects>
-                <viewController id="Cg9-np-L3O" customClass="AboutViewController" customModule="Mmry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Cg9-np-L3O" customClass="AboutViewController" customModule="Back_to_the_Photo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HsD-yI-Hz5"/>
                         <viewControllerLayoutGuide type="bottom" id="ZJt-Pg-iDm"/>
@@ -315,7 +342,7 @@
         <!--Show Reminder View Controller-->
         <scene sceneID="0E1-Rb-bFO">
             <objects>
-                <viewController storyboardIdentifier="ShowReminder" providesPresentationContextTransitionStyle="YES" id="8VE-8L-q9l" customClass="ShowReminderViewController" customModule="Mmry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowReminder" providesPresentationContextTransitionStyle="YES" id="8VE-8L-q9l" customClass="ShowReminderViewController" customModule="Back_to_the_Photo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eli-1t-1YW"/>
                         <viewControllerLayoutGuide type="bottom" id="bFl-8y-g7O"/>
@@ -359,7 +386,7 @@
         <!--Tiny Photo Library View Controller-->
         <scene sceneID="Nbu-3o-4EJ">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="qRP-uy-BqF" customClass="TinyPhotoLibraryViewController" customModule="Mmry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="qRP-uy-BqF" customClass="TinyPhotoLibraryViewController" customModule="Back_to_the_Photo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="49f-3a-9yj"/>
                         <viewControllerLayoutGuide type="bottom" id="EvK-Ay-3RR"/>
@@ -368,7 +395,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpS-xt-WPw" customClass="SpringView" customModule="Mmry" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpS-xt-WPw" customClass="SpringView" customModule="Back_to_the_Photo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="440" width="375" height="300"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZH-iW-eck">
@@ -415,6 +442,7 @@
                                 </constraints>
                                 <connections>
                                     <action selector="closeButtonPressed:" destination="qRP-uy-BqF" eventType="touchUpInside" id="Roh-Cm-Ub6"/>
+                                    <segue destination="UJH-aV-bfl" kind="unwind" unwindAction="unwindFromTinyPhotoLibrary:" id="euS-Ub-NnV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -441,19 +469,20 @@
                     <connections>
                         <outlet property="modalView" destination="TpS-xt-WPw" id="ydH-MU-wry"/>
                         <outlet property="stackView" destination="waJ-zR-1jl" id="ZVh-wh-XwS"/>
+                        <segue destination="UJH-aV-bfl" kind="unwind" identifier="tpl-segue" unwindAction="unwindFromTinyPhotoLibrary:" id="JZ8-pY-7nI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBr-sv-OK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="UJH-aV-bfl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="830.5" y="-16.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="sample-1093-lightning-bolt-2" width="22" height="28"/>
         <image name="sample-834-bolt" width="26" height="28"/>
         <image name="sample-881-globe" width="28" height="28"/>
         <image name="sample-908-target" width="28" height="28"/>
-        <image name="start-text" width="750" height="1337"/>
+        <image name="start-text" width="750" height="1205"/>
     </resources>
 </document>

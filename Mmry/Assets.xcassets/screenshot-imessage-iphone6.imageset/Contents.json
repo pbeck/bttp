@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "launchscreen2_02.png",
+      "filename" : "screenshot-imessage-iphone6.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "launchscreen2_02-1.png",
+      "filename" : "screenshot-imessage-iphone6-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "launchscreen2_02-2.png",
+      "filename" : "screenshot-imessage-iphone6-2.png",
       "scale" : "3x"
     }
   ],

@@ -11,6 +11,6 @@ import UIKit
 class RootNavController: UINavigationController {
 
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+        return .Default
     }
 }

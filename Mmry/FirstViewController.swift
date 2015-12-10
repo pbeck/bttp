@@ -51,6 +51,8 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
         collectionView?.delegate = self.screenshotsCollectionController
         collectionView?.dataSource = self.screenshotsCollectionController
         
+        addNewImage(UIImage(named: "screenshot-imessage-iphone6")!)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,7 +62,7 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+        return UIStatusBarStyle.Default
     }
     
     func addNewImage(image:UIImage) {
@@ -74,7 +76,10 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
         self.addPhotoController = AddPhotoController(withImage: image)
         self.addPhotoController?.modalPresentationStyle = .OverFullScreen
         self.addPhotoController?.modalTransitionStyle = .CrossDissolve
-        self.presentViewController(self.addPhotoController!, animated: false, completion: nil)
+        //self.presentViewController(self.addPhotoController!, animated: false, completion: )
+        self.presentViewController(self.addPhotoController!, animated: false) { () -> Void in
+            print("Done")
+        }
         
     }
     
@@ -130,9 +135,7 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
     }
     */
     
-    @IBAction func addMedia(sender:AnyObject) {
-        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
-        
+    @IBAction func addMedia(sender:AnyObject) {        
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .PhotoLibrary
@@ -142,6 +145,14 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
         self.presentViewController(imagePicker, animated: true, completion: nil)
 
     }
+    
+    @IBAction func unwindFromTinyPhotoLibrary(sender: UIStoryboardSegue)
+    {
+        print("unwindFromTinyPhotoLibrary")
+        let sourceViewController = sender.sourceViewController
+        // Pull any data from the view controller which initiated the unwind segue.
+    }
+    
     
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
@@ -167,6 +178,14 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
             imagePicker.allowsEditing = false
             
             self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "tpl-segue") {
+            print("Equals!")
+            var tbl = segue.destinationViewController as! TinyPhotoLibraryViewController 
+            tbl.firstViewController = self
         }
     }
 }

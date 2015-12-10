@@ -13,6 +13,7 @@ import Photos
 class TinyPhotoLibraryViewController: UIViewController {
     
     @IBOutlet weak var modalView: SpringView!
+    weak var firstViewController:FirstViewController?
     @IBOutlet var stackView: UIStackView?
     
     var photos:[UIImage]?
@@ -60,21 +61,19 @@ class TinyPhotoLibraryViewController: UIViewController {
         }
     }
     
+
     
     func tappedPhoto(sender: UITapGestureRecognizer) {
-        /*
-        dismissViewControllerAnimated(true) { () -> Void in
-            
-            let vc = self.delegate as! FirstViewController
-            vc.addNewImage(UIImage(named:"screenshot-sample-iphone6")!)
+        print("Tapped")
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            self.firstViewController!.addNewImage(UIImage(named: "screenshot-imessage-iphone6")!)
         }
-        */
-        //self.unwindForSegue(<#T##unwindSegue: UIStoryboardSegue##UIStoryboardSegue#>, towardsViewController: <#T##UIViewController#>)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+        return .Default
     }
+    
     
     @IBAction func closeButtonPressed(sender: AnyObject) {
         dismissViewControllerAnimated(false, completion: nil)

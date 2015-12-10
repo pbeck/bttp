@@ -13,6 +13,12 @@
 		668FEDC01C0DEA7600A9F289 /* PermissionScope.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		668FEDC91C0E25B800A9F289 /* CNPGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */; };
 		668FEDCB1C0E51DE00A9F289 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */; };
+		780C4EC81C1985A800820048 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780C4EC71C1985A800820048 /* NotificationCenter.framework */; };
+		780C4ECB1C1985A800820048 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780C4ECA1C1985A800820048 /* TodayViewController.swift */; };
+		780C4ECE1C1985A800820048 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780C4ECC1C1985A800820048 /* MainInterface.storyboard */; };
+		780C4ED21C1985A800820048 /* Back to the Photo Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 780C4EC61C1985A800820048 /* Back to the Photo Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		780C4ED81C19C47300820048 /* DoneHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780C4ED61C19C47300820048 /* DoneHUD.swift */; };
+		780C4ED91C19C47300820048 /* DoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780C4ED71C19C47300820048 /* DoneView.swift */; };
 		784D15D71C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D15D61C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift */; };
 		7876D2AA1C1825A400AE2B42 /* AddPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2A91C1825A400AE2B42 /* AddPhotoController.swift */; };
 		7876D2CA1C18314A00AE2B42 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876D2AC1C18314A00AE2B42 /* AsyncButton.swift */; };
@@ -58,6 +64,16 @@
 		78E6E5751C0F5B560062929D /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E6E5741C0F5B560062929D /* DatePickerDialog.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		780C4ED01C1985A800820048 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78979C921BC80882003F86BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 780C4EC51C1985A800820048;
+			remoteInfo = "Back to the Photo Widget";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		663C6DFE1C0B393D000CA09C /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -86,6 +102,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				780C4ED21C1985A800820048 /* Back to the Photo Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +117,13 @@
 		668FEDC71C0E25B800A9F289 /* CNPGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPGridMenu.h; sourceTree = "<group>"; };
 		668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPGridMenu.m; sourceTree = "<group>"; };
 		668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		780C4EC61C1985A800820048 /* Back to the Photo Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Back to the Photo Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		780C4EC71C1985A800820048 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		780C4ECA1C1985A800820048 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		780C4ECD1C1985A800820048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		780C4ECF1C1985A800820048 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		780C4ED61C19C47300820048 /* DoneHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneHUD.swift; sourceTree = "<group>"; };
+		780C4ED71C19C47300820048 /* DoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneView.swift; sourceTree = "<group>"; };
 		784D15D61C11E43E004DFC65 /* ScreenshotsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotsCollectionViewController.swift; sourceTree = "<group>"; };
 		7876D2A91C1825A400AE2B42 /* AddPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoController.swift; sourceTree = "<group>"; };
 		7876D2AC1C18314A00AE2B42 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
@@ -135,7 +159,7 @@
 		7876D2E91C1836B500AE2B42 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		789105B01C1845AD008D2D2A /* RootNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavController.swift; sourceTree = "<group>"; };
 		789105B21C185209008D2D2A /* TinyPhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyPhotoLibraryViewController.swift; sourceTree = "<group>"; };
-		78979C9A1BC80882003F86BB /* Mmry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mmry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78979C9A1BC80882003F86BB /* Back to the Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Back to the Photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78979C9D1BC80882003F86BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78979C9F1BC80882003F86BB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		78979CA41BC80882003F86BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +173,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		780C4EC31C1985A800820048 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780C4EC81C1985A800820048 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78979C971BC80882003F86BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,8 +198,19 @@
 			children = (
 				7876D2E91C1836B500AE2B42 /* CoreMotion.framework */,
 				668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */,
+				780C4EC71C1985A800820048 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		780C4EC91C1985A800820048 /* Back to the Photo Widget */ = {
+			isa = PBXGroup;
+			children = (
+				780C4ECA1C1985A800820048 /* TodayViewController.swift */,
+				780C4ECC1C1985A800820048 /* MainInterface.storyboard */,
+				780C4ECF1C1985A800820048 /* Info.plist */,
+			);
+			path = "Back to the Photo Widget";
 			sourceTree = "<group>";
 		};
 		7876D2AB1C18314A00AE2B42 /* Spring */ = {
@@ -210,7 +253,8 @@
 		78979C911BC80882003F86BB = {
 			isa = PBXGroup;
 			children = (
-				78979C9C1BC80882003F86BB /* Mmry */,
+				78979C9C1BC80882003F86BB /* Back to the Photo */,
+				780C4EC91C1985A800820048 /* Back to the Photo Widget */,
 				668FEDC21C0DEA8900A9F289 /* Frameworks */,
 				78979C9B1BC80882003F86BB /* Products */,
 			);
@@ -219,12 +263,13 @@
 		78979C9B1BC80882003F86BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				78979C9A1BC80882003F86BB /* Mmry.app */,
+				78979C9A1BC80882003F86BB /* Back to the Photo.app */,
+				780C4EC61C1985A800820048 /* Back to the Photo Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		78979C9C1BC80882003F86BB /* Mmry */ = {
+		78979C9C1BC80882003F86BB /* Back to the Photo */ = {
 			isa = PBXGroup;
 			children = (
 				7876D2AB1C18314A00AE2B42 /* Spring */,
@@ -241,6 +286,8 @@
 				668FEDC71C0E25B800A9F289 /* CNPGridMenu.h */,
 				668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */,
 				78E6E5741C0F5B560062929D /* DatePickerDialog.swift */,
+				780C4ED61C19C47300820048 /* DoneHUD.swift */,
+				780C4ED71C19C47300820048 /* DoneView.swift */,
 				78979CA31BC80882003F86BB /* Main.storyboard */,
 				789105B01C1845AD008D2D2A /* RootNavController.swift */,
 				78979CA61BC80882003F86BB /* Assets.xcassets */,
@@ -249,15 +296,33 @@
 				668FEDC61C0E25B800A9F289 /* Mmry-Bridging-Header.h */,
 				78E49B9F1C16F7AD0007F3DA /* about.html */,
 			);
+			name = "Back to the Photo";
 			path = Mmry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		78979C991BC80882003F86BB /* Mmry */ = {
+		780C4EC51C1985A800820048 /* Back to the Photo Widget */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78979CAE1BC80882003F86BB /* Build configuration list for PBXNativeTarget "Mmry" */;
+			buildConfigurationList = 780C4ED31C1985A800820048 /* Build configuration list for PBXNativeTarget "Back to the Photo Widget" */;
+			buildPhases = (
+				780C4EC21C1985A800820048 /* Sources */,
+				780C4EC31C1985A800820048 /* Frameworks */,
+				780C4EC41C1985A800820048 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Back to the Photo Widget";
+			productName = "Back to the Photo Widget";
+			productReference = 780C4EC61C1985A800820048 /* Back to the Photo Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		78979C991BC80882003F86BB /* Back to the Photo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78979CAE1BC80882003F86BB /* Build configuration list for PBXNativeTarget "Back to the Photo" */;
 			buildPhases = (
 				78979C961BC80882003F86BB /* Sources */,
 				78979C971BC80882003F86BB /* Frameworks */,
@@ -270,10 +335,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				780C4ED11C1985A800820048 /* PBXTargetDependency */,
 			);
-			name = Mmry;
+			name = "Back to the Photo";
 			productName = Mmry;
-			productReference = 78979C9A1BC80882003F86BB /* Mmry.app */;
+			productReference = 78979C9A1BC80882003F86BB /* Back to the Photo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -286,18 +352,22 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Beckman Creative";
 				TargetAttributes = {
+					780C4EC51C1985A800820048 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = NGB32TH254;
+					};
 					78979C991BC80882003F86BB = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = NGB32TH254;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
 				};
 			};
-			buildConfigurationList = 78979C951BC80882003F86BB /* Build configuration list for PBXProject "Mmry" */;
+			buildConfigurationList = 78979C951BC80882003F86BB /* Build configuration list for PBXProject "Back to the Photo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -310,12 +380,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				78979C991BC80882003F86BB /* Mmry */,
+				78979C991BC80882003F86BB /* Back to the Photo */,
+				780C4EC51C1985A800820048 /* Back to the Photo Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		780C4EC41C1985A800820048 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780C4ECE1C1985A800820048 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78979C981BC80882003F86BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,6 +428,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		780C4EC21C1985A800820048 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780C4ECB1C1985A800820048 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78979C961BC80882003F86BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -357,6 +444,7 @@
 				7876D2D11C18314A00AE2B42 /* DesignableTabBarController.swift in Sources */,
 				7876D2CB1C18314A00AE2B42 /* AsyncImageView.swift in Sources */,
 				78E6E5731C0F3BE40062929D /* ShowReminderViewController.swift in Sources */,
+				780C4ED81C19C47300820048 /* DoneHUD.swift in Sources */,
 				789105B31C185209008D2D2A /* TinyPhotoLibraryViewController.swift in Sources */,
 				7876D2D31C18314A00AE2B42 /* DesignableTextView.swift in Sources */,
 				7876D2CD1C18314A00AE2B42 /* BlurView.swift in Sources */,
@@ -390,6 +478,7 @@
 				668FEDCB1C0E51DE00A9F289 /* SettingsViewController.swift in Sources */,
 				78E49BA21C170B2B0007F3DA /* AboutViewController.swift in Sources */,
 				7876D2D01C18314A00AE2B42 /* DesignableLabel.swift in Sources */,
+				780C4ED91C19C47300820048 /* DoneView.swift in Sources */,
 				7876D2E11C18314A00AE2B42 /* SpringTextField.swift in Sources */,
 				78E6E5751C0F5B560062929D /* DatePickerDialog.swift in Sources */,
 				7876D2E01C18314A00AE2B42 /* SpringLabel.swift in Sources */,
@@ -398,7 +487,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		780C4ED11C1985A800820048 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 780C4EC51C1985A800820048 /* Back to the Photo Widget */;
+			targetProxy = 780C4ED01C1985A800820048 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		780C4ECC1C1985A800820048 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				780C4ECD1C1985A800820048 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		78979CA31BC80882003F86BB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -418,6 +523,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		780C4ED41C1985A800820048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Back to the Photo Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "se.beckmancreative.bttp.Back-to-the-Photo-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		780C4ED51C1985A800820048 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Back to the Photo Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "se.beckmancreative.bttp.Back-to-the-Photo-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		78979CAC1BC80882003F86BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -503,9 +636,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -513,8 +648,8 @@
 				INFOPLIST_FILE = Mmry/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.mmry;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.bttp;
+				PRODUCT_NAME = "Back to the Photo";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mmry/Mmry-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -525,9 +660,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -535,8 +672,8 @@
 				INFOPLIST_FILE = Mmry/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.mmry;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.bttp;
+				PRODUCT_NAME = "Back to the Photo";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mmry/Mmry-Bridging-Header.h";
 			};
@@ -545,7 +682,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		78979C951BC80882003F86BB /* Build configuration list for PBXProject "Mmry" */ = {
+		780C4ED31C1985A800820048 /* Build configuration list for PBXNativeTarget "Back to the Photo Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				780C4ED41C1985A800820048 /* Debug */,
+				780C4ED51C1985A800820048 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		78979C951BC80882003F86BB /* Build configuration list for PBXProject "Back to the Photo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78979CAC1BC80882003F86BB /* Debug */,
@@ -554,7 +699,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		78979CAE1BC80882003F86BB /* Build configuration list for PBXNativeTarget "Mmry" */ = {
+		78979CAE1BC80882003F86BB /* Build configuration list for PBXNativeTarget "Back to the Photo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78979CAF1BC80882003F86BB /* Debug */,

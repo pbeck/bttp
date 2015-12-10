@@ -88,7 +88,7 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
         UIView.beginAnimations("fade-bg-in", context: nil)
         UIView.setAnimationDuration(0.2)
         UIView.setAnimationCurve(.EaseInOut)
-        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.6)
+        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.88)
         UIView.commitAnimations()
         
         self.imageView.animation = "slideUp"
@@ -110,13 +110,17 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        
+        DoneHUD.showInView(self.imageView)
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     func animateDiscardedAndDismiss() {
@@ -137,18 +141,25 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
     }
     
     func animateAcceptedAndDismiss() {
+        
+        
         self.imageView.animation = "slideRight"
         self.imageView.animateFrom = false
         self.imageView.curve = "easeIn"
         self.imageView.force = 0.6
         self.imageView.duration = 0.6
         
+        
+        
         self.imageView.animateToNext({
             self.imageView.animation = "fadeOut"
             self.imageView.duration = 0.4
             self.imageView.curve = "easeIn"
             self.imageView.animateToNext({
+                
+                
                 self.dismissViewControllerAnimated(false, completion: nil)
+                
             })
         })
     }
@@ -195,7 +206,7 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
         
         let laterToday:CNPGridMenuItem = CNPGridMenuItem()
         laterToday.icon = UIImage(named: "LaterToday")
-        laterToday.title = "Later Today"
+        laterToday.title = "In 1 hour"
         
         let thisEvening:CNPGridMenuItem = CNPGridMenuItem()
         thisEvening.icon = UIImage(named: "ThisEvening")
@@ -212,25 +223,18 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
         let nextWeek:CNPGridMenuItem = CNPGridMenuItem()
         nextWeek.icon = UIImage(named: "NextWeek")
         nextWeek.title = "Next Week"
-        
-        let inAMonth:CNPGridMenuItem = CNPGridMenuItem()
-        inAMonth.icon = UIImage(named: "InMonth")
-        inAMonth.title = "In a Month"
-        
-        let someday:CNPGridMenuItem = CNPGridMenuItem()
-        someday.icon = UIImage(named: "Someday")
-        someday.title = "Someday"
-        
+
+        /*
         let pickDate:CNPGridMenuItem = CNPGridMenuItem()
         pickDate.icon = UIImage(named: "PickDate")
         pickDate.title = "Pick Date"
-        
+        */
         let debug5secs:CNPGridMenuItem = CNPGridMenuItem()
         debug5secs.icon = UIImage(named: "Desktop")
         debug5secs.title = "Debug"
         
         
-        let gridMenu = CNPGridMenu(menuItems:[laterToday, thisEvening, tomorrow, thisWeekend, nextWeek, inAMonth, someday, pickDate, debug5secs])
+        let gridMenu = CNPGridMenu(menuItems:[laterToday, thisEvening, tomorrow, thisWeekend, nextWeek, debug5secs])
         gridMenu.delegate = self
         
         self.presentGridMenu(gridMenu, animated: true) { () -> Void in
@@ -246,6 +250,8 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
     }
     
     func gridMenu(menu: CNPGridMenu!, didTapOnItem item: CNPGridMenuItem!) {
+        
+        
         self.dismissGridMenuAnimated(true) { () -> Void in
             let now = NSDate()
             let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
