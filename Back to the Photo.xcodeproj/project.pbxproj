@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		663C6E001C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C6DFF1C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift */; };
 		663C6E021C0BAF6D000CA09C /* ScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */; };
-		668FEDBF1C0DEA7600A9F289 /* PermissionScope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */; };
-		668FEDC01C0DEA7600A9F289 /* PermissionScope.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		668FEDC91C0E25B800A9F289 /* CNPGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */; };
 		668FEDCB1C0E51DE00A9F289 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */; };
 		780C4EC81C1985A800820048 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780C4EC71C1985A800820048 /* NotificationCenter.framework */; };
@@ -91,7 +89,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				668FEDC01C0DEA7600A9F289 /* PermissionScope.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,7 +109,6 @@
 /* Begin PBXFileReference section */
 		663C6DFF1C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotCell.swift; sourceTree = "<group>"; };
-		668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PermissionScope.framework; path = Carthage/Build/iOS/PermissionScope.framework; sourceTree = "<group>"; };
 		668FEDC61C0E25B800A9F289 /* Mmry-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mmry-Bridging-Header.h"; sourceTree = "<group>"; };
 		668FEDC71C0E25B800A9F289 /* CNPGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPGridMenu.h; sourceTree = "<group>"; };
 		668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPGridMenu.m; sourceTree = "<group>"; };
@@ -186,7 +182,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7876D2EB1C18381200AE2B42 /* CoreMotion.framework in Frameworks */,
-				668FEDBF1C0DEA7600A9F289 /* PermissionScope.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				7876D2E91C1836B500AE2B42 /* CoreMotion.framework */,
-				668FEDBE1C0DEA7600A9F289 /* PermissionScope.framework */,
 				780C4EC71C1985A800820048 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -418,6 +412,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/PermissionScope.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ImagePickerSheetController.framework",
 			);
 			outputPaths = (
 			);
@@ -689,6 +684,7 @@
 				780C4ED51C1985A800820048 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78979C951BC80882003F86BB /* Build configuration list for PBXProject "Back to the Photo" */ = {
 			isa = XCConfigurationList;

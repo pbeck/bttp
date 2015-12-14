@@ -1,1 +1,2 @@
 github "nickoneill/PermissionScope" ~> 1.0
+github "larcus94/ImagePickerSheetController" ~> 0.9.1

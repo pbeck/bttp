@@ -13,6 +13,8 @@ class SettingsViewController: UITableViewController {
     //@IBOutlet var tableView:UITableView?
     @IBOutlet var twitterCell:UITableViewCell?
     @IBOutlet var webView:UIWebView?
+    @IBOutlet var quickAddScreenshotsOnlySwitch:UISwitch?
+    @IBOutlet var screenshotsOnlySwitch:UISwitch?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +39,23 @@ class SettingsViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    //override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    //}
+        let userDefs = NSUserDefaults.standardUserDefaults()
+        /*
+        self.quickAddScreenshotsOnlySwitch =
+        let qa = userDefs.valueForKey("quickadd_only_for_screenshots")
+        let so = userDefs.valueForKey("use_screenshots_only")
+        */
+        
+        NSUserDefaults.standardUserDefaults().synchronize()
+    
+    }
+    
+    @IBAction func setQuickAddOnlyScreenshots(sender:AnyObject) {
+        
+    }
     
     @IBAction func openTwitter(sender:AnyObject) {
         let screenName =  "pbeck"

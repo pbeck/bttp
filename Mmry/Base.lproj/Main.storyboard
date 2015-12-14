@@ -57,28 +57,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="qRP-uy-BqF" kind="presentation" identifier="tpl-segue" animates="NO" id="64y-PP-PDB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgF-vh-pG2" customClass="DesignableButton" customModule="Back_to_the_Photo" customModuleProvider="target">
-                                <rect key="frame" x="145" y="549" width="106" height="34"/>
-                                <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
-                                <state key="normal" title="From library">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="addMedia:" destination="9pv-A4-QxB" eventType="touchUpInside" id="1AW-4v-zRt"/>
+                                    <action selector="addMedia:" destination="9pv-A4-QxB" eventType="touchUpInside" id="RgE-h7-7BX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -88,13 +67,11 @@
                             <constraint firstItem="mfn-YR-adh" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="2Tw-SR-un1"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="cI3-vN-Mh4" secondAttribute="bottom" constant="20" id="3t1-be-QkX"/>
                             <constraint firstItem="mfn-YR-adh" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="8pc-bV-1ZX"/>
-                            <constraint firstItem="cI3-vN-Mh4" firstAttribute="leading" secondItem="FgF-vh-pG2" secondAttribute="trailing" constant="12" id="DAQ-Fi-bgI"/>
                             <constraint firstItem="mfn-YR-adh" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" constant="65" id="DKr-dd-C3K"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="mfn-YR-adh" secondAttribute="bottom" id="L9q-k6-HST"/>
                             <constraint firstAttribute="trailing" secondItem="mfn-YR-adh" secondAttribute="trailing" id="SEv-Cs-9GH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cI3-vN-Mh4" secondAttribute="trailing" id="VZR-c1-HRd"/>
                             <constraint firstItem="mfn-YR-adh" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="apO-mB-fpm"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="FgF-vh-pG2" secondAttribute="bottom" constant="20" id="tdp-Yn-OPo"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -164,7 +141,7 @@
                         <sections>
                             <tableViewSection headerTitle="Settings" id="Nng-pc-UUS">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="showCamera" textLabel="Ino-iD-0zQ" style="IBUITableViewCellStyleDefault" id="HHy-3z-hva" userLabel="quickAdd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="showCamera" textLabel="Ino-iD-0zQ" detailTextLabel="lqk-cg-pr0" style="IBUITableViewCellStyleSubtitle" id="HHy-3z-hva" userLabel="quickAdd">
                                         <rect key="frame" x="0.0" y="50" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HHy-3z-hva" id="4XW-1L-RoF">
@@ -172,10 +149,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Only screenshots in QuickAdd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ino-iD-0zQ">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="5" width="218" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Setting disabled in beta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lqk-cg-pr0">
+                                                    <rect key="frame" x="15" y="25" width="125" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -184,7 +168,7 @@
                                             <outlet property="accessoryView" destination="K13-wS-cuf" id="V5E-vl-zrD"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="onlyScreenshots" textLabel="QvL-pp-6C5" style="IBUITableViewCellStyleDefault" id="CVK-MX-o9C">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="onlyScreenshots" textLabel="QvL-pp-6C5" detailTextLabel="kgg-MW-l34" style="IBUITableViewCellStyleSubtitle" id="CVK-MX-o9C">
                                         <rect key="frame" x="0.0" y="94" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CVK-MX-o9C" id="3wv-9X-aDd">
@@ -192,11 +176,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Use screenshots only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QvL-pp-6C5">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="5" width="156" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Setting disabled in beta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kgg-MW-l34">
+                                                    <rect key="frame" x="15" y="25" width="125" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -284,19 +275,21 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="quickAddScreenshotsOnlySwitch" destination="K13-wS-cuf" id="kXa-fV-qpM"/>
+                        <outlet property="screenshotsOnlySwitch" destination="CKp-2W-fEK" id="afZ-3h-9db"/>
                         <outlet property="twitterCell" destination="IgX-pu-Uxf" id="I28-hY-SEV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5v-vY-Zlb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="CKp-2W-fEK" userLabel="Switch - Screenshots">
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="CKp-2W-fEK" userLabel="Switch - Screenshots">
                     <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </switch>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Uv6-aw-obP" userLabel="Switch - Camera">
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Uv6-aw-obP" userLabel="Switch - Camera">
                     <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </switch>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="K13-wS-cuf" userLabel="Switch - QuickAdd">
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="K13-wS-cuf" userLabel="Switch - QuickAdd">
                     <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </switch>

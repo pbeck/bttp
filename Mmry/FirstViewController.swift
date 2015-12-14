@@ -10,6 +10,7 @@ import UIKit
 import Photos
 import PermissionScope
 import MobileCoreServices
+import ImagePickerSheetController
 
 
 let ScreenshotCellIdentifier = "SCREENSHOTCELLIDENTIFIER"
@@ -50,9 +51,6 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
         
         collectionView?.delegate = self.screenshotsCollectionController
         collectionView?.dataSource = self.screenshotsCollectionController
-        
-        addNewImage(UIImage(named: "screenshot-imessage-iphone6")!)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,7 +81,6 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
         
     }
     
-    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         print("Picked image")
         picker.dismissViewControllerAnimated(true, completion: nil)
@@ -91,60 +88,63 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
         self.addNewImage(image)
     }
     
-    /*
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        return
-    }
-    */
-    
-    /*
     @IBAction func addMedia(sender:AnyObject) {
-
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        alertController.modalPresentationStyle = UIModalPresentationStyle.Popover
         
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil))
-        
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: UIAlertActionStyle.Default, handler: { (actionSheetController) -> Void in
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-            {
-                let imagePicker = UIImagePickerController()
-                imagePicker.delegate = self
-                imagePicker.sourceType = .Camera;
-                imagePicker.mediaTypes = [kUTTypeImage as String]
-                imagePicker.allowsEditing = false
-                
-                self.presentViewController(imagePicker, animated: true, completion: nil)
+        let presentImagePickerController: UIImagePickerControllerSourceType -> () = { source in
+            let controller = UIImagePickerController()
+            controller.delegate = self
+            var sourceType = source
+            if (!UIImagePickerController.isSourceTypeAvailable(sourceType)) {
+                sourceType = .PhotoLibrary
+                print("Fallback to camera roll as a source since the simulator doesn't support taking pictures")
             }
+            controller.sourceType = sourceType
+            
+            self.presentViewController(controller, animated: true, completion: nil)
+        }
+        
+        let controller = ImagePickerSheetController(mediaType: .ImageAndVideo)
+        controller.maximumSelection = 1
+    
+        controller.addAction(ImagePickerAction(title: NSLocalizedString("Photo Library", comment: "Action Title"), secondaryTitle: { NSString.localizedStringWithFormat(NSLocalizedString("Create reminder", comment: "Action Title"), $0) as String}, handler: { _ in
+            presentImagePickerController(.PhotoLibrary)
+            }, secondaryHandler: { _, numberOfPhotos in
+                print("Send \(controller.selectedImageAssets)")
+                
+                let manager = PHImageManager.defaultManager()
+                var option = PHImageRequestOptions()
+                var thumbnail = UIImage()
+                option.synchronous = true
+                manager.requestImageForAsset(controller.selectedImageAssets[0], targetSize: CGSize(width: 800.0, height: 8000.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
+                    thumbnail = result!
+                })
+                self.addNewImage(thumbnail)
         }))
 
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("Library", comment: ""), style: UIAlertActionStyle.Default, handler: { (actionSheetController) -> Void in
-            
-            UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
-            
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .PhotoLibrary
-            imagePicker.mediaTypes = [kUTTypeImage as String]
-            imagePicker.allowsEditing = false
-            
-            self.presentViewController(imagePicker, animated: true, completion: nil)
+        controller.addAction(ImagePickerAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .Cancel, handler: { _ in
+            print("Cancelled")
         }))
-       
-        presentViewController(alertController, animated: true, completion: nil)
+        
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            controller.modalPresentationStyle = .Popover
+            controller.popoverPresentationController?.sourceView = view
+            controller.popoverPresentationController?.sourceRect = CGRect(origin: view.center, size: CGSize())
+        }
+        
+        presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    /*
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        print("Picked image")
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        self.setNeedsStatusBarAppearanceUpdate()
+        self.addNewImage(image)
     }
     */
-    
-    @IBAction func addMedia(sender:AnyObject) {        
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .PhotoLibrary
-        imagePicker.mediaTypes = [kUTTypeImage as String]
-        imagePicker.allowsEditing = false
-        
-        self.presentViewController(imagePicker, animated: true, completion: nil)
-
-    }
     
     @IBAction func unwindFromTinyPhotoLibrary(sender: UIStoryboardSegue)
     {
@@ -166,6 +166,7 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
         imagePicker.allowsEditing = false
         
         self.presentViewController(imagePicker, animated: true, completion: nil)
+
     }
     
     func presentCamera() {
@@ -188,5 +189,6 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
             tbl.firstViewController = self
         }
     }
+
 }
 

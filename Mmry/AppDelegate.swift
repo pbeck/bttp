@@ -54,10 +54,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PHPhotoLibraryChangeObser
         PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
         
         self.updateDynamicShortcutItems()
+        
+        self.shouldQuickAdd()
+        
         return true
     }
     
+    // TODO: Check only screenshots or not based on user settings
     
+    func shouldQuickAdd() -> PHAsset? {
+        let fetchOptions:PHFetchOptions = PHFetchOptions()
+        var fetchResults:PHFetchResult
+        
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        fetchOptions.fetchLimit = 1
+        
+        fetchResults = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
+        
+        if(fetchResults.count > 0) {
+            if let asset = fetchResults.objectAtIndex(0) as? PHAsset {
+                if(isSimulator) {
+                    if asset.pixelWidth == 750 && asset.pixelHeight == 1334 {
+                        print("There's a new screenshot in town!")
+                        return asset
+                    }
+                } else {
+                    if asset.mediaType == .Image && asset.mediaSubtypes == .PhotoScreenshot {
+                        return asset
+                    }
+                }
+            } else {
+                fatalError("Error in shouldQuickAdd: could not cast asset to PHAsset")
+            }
+        }
+        // No images in library
+        return nil;
+    }
+
+
     
     // This gets called when we return from background state and
     // something changed in the system wide photo library.
