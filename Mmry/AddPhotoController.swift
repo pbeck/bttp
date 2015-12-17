@@ -8,75 +8,58 @@
 
 import UIKit
 import CoreMotion
+import CoreData
 
 class AddPhotoController: UIViewController, CNPGridMenuDelegate {
     
-    var image:UIImage
-    //var cardView:SpringView
-    var imageView:SpringImageView
+    var delegate:FirstViewController!
     
-    let motionManager:CMMotionManager
+    var image:UIImage!
+    var assetRef:String!
+    var testmsg:String!
     
-    init(withImage image:UIImage) {
-        self.image = image
-        self.imageView = SpringImageView(image: self.image)
-        self.motionManager = CMMotionManager()
-        //self.cardView = SpringView()
-        
-        super.init(nibName: nil, bundle: nil)
-        
-        /*
-        if motionManager.deviceMotionAvailable {
-            motionManager.deviceMotionUpdateInterval = 0.01
-            motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue()) { (data: CMAccelerometerData?, error: NSError?) in
-                
-                let rotation = atan2(data!.acceleration.x, data!.acceleration.y) - M_PI
-                self.imageView.transform = CGAffineTransformMakeRotation(CGFloat(rotation))
-            }
-        }
-        */
-        
-        print("init(withImage)")
-        
-    }
-
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+    @IBOutlet var imageView:SpringImageView!
+    
+    //let motionManager:CMMotionManager
+    
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        //self.imageView = SpringImageView(image:self.image)
+        //self.motionManager = CMMotionManager()
+        super.init(coder: aDecoder)
     }
 
     override func viewDidLoad() {
+        print("Image asset ref: \(assetRef)")
         super.viewDidLoad()
         
+        self.modalPresentationCapturesStatusBarAppearance = true
+
         self.setNeedsStatusBarAppearanceUpdate()
         
-        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.0)
+        // We set these in IB
+        // self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.0)
+        // self.view.backgroundColor = UIColor.clearColor()
+        
         self.view.userInteractionEnabled = true
         
-        /*
-        self.cardView.bounds = CGRectInset(self.view.bounds, 40.0, 60.0)
-        self.cardView.center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2);
-        self.cardView.backgroundColor = UIColor.blueColor()
-        //self.cardView.alpha = 0.0
+        self.imageView = SpringImageView(image: self.image)
         
-        self.view.addSubview(self.cardView)
-        */
-        
-        imageView.alpha = 0.0
-        imageView.contentMode = .ScaleAspectFit
-        imageView.opaque = true
-        imageView.backgroundColor = UIColor.clearColor()
-        imageView.bounds = CGRectInset(self.view.bounds, 40.0, 60.0)
-        imageView.center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2);
+        imageView!.alpha = 0.0
+        imageView!.contentMode = .ScaleAspectFit
+        imageView!.opaque = true
+        imageView!.backgroundColor = UIColor.clearColor()
+        imageView!.bounds = CGRectInset(self.view.bounds, 40.0, 60.0)
+        imageView!.center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2);
 
-        let layer = imageView.layer
+        let layer = imageView!.layer
         layer.shadowOffset = CGSizeMake(0,1)
         layer.shadowColor = UIColor.blackColor().CGColor
         layer.shadowRadius = 26
         layer.shadowOpacity = 0.5
 
-
-        self.view.addSubview(imageView)
-        //self.cardView.addSubview(imageView)
+        self.view.addSubview(imageView!)
         
     }
     
@@ -84,18 +67,19 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
         
         
         super.viewDidAppear(animated)
-        
+        /*
         UIView.beginAnimations("fade-bg-in", context: nil)
         UIView.setAnimationDuration(0.2)
         UIView.setAnimationCurve(.EaseInOut)
         self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.88)
         UIView.commitAnimations()
+        */
         
-        self.imageView.animation = "slideUp"
-        self.imageView.curve = "easeIn"
-        self.imageView.force = 1.8
-        self.imageView.duration = 0.6
-        self.imageView.animateNext { () -> () in
+        self.imageView!.animation = "slideUp"
+        self.imageView!.curve = "easeIn"
+        self.imageView!.force = 1.8
+        self.imageView!.duration = 0.6
+        self.imageView!.animateNext { () -> () in
             self.showGridMenu()
         }
         
@@ -110,13 +94,11 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        DoneHUD.showInView(self.imageView)
-        
+        DoneHUD.showInView(self.imageView!)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -124,59 +106,53 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
     }
     
     func animateDiscardedAndDismiss() {
-        self.imageView.animation = "fall"
-        self.imageView.animateFrom = true
-        self.imageView.curve = "easeIn"
-        self.imageView.force = 0.6
-        self.imageView.duration = 0.6
+        self.imageView!.animation = "fall"
+        self.imageView!.animateFrom = true
+        self.imageView!.curve = "easeIn"
+        self.imageView!.force = 0.6
+        self.imageView!.duration = 0.6
         
-        self.imageView.animateToNext({
-            self.imageView.animation = "fadeOut"
-            self.imageView.duration = 0.4
-            self.imageView.curve = "easeIn"
-            self.imageView.animateToNext({
+        self.imageView!.animateToNext({
+            self.imageView!.animation = "fadeOut"
+            self.imageView!.duration = 0.4
+            self.imageView!.curve = "easeIn"
+            self.imageView!.animateToNext({
                 self.dismissViewControllerAnimated(false, completion: nil)
             })
         })
     }
     
     func animateAcceptedAndDismiss() {
+        self.imageView!.animation = "slideRight"
+        self.imageView!.animateFrom = false
+        self.imageView!.curve = "easeIn"
+        self.imageView!.force = 0.6
+        self.imageView!.duration = 0.6
         
-        
-        self.imageView.animation = "slideRight"
-        self.imageView.animateFrom = false
-        self.imageView.curve = "easeIn"
-        self.imageView.force = 0.6
-        self.imageView.duration = 0.6
-        
-        
-        
-        self.imageView.animateToNext({
-            self.imageView.animation = "fadeOut"
-            self.imageView.duration = 0.4
-            self.imageView.curve = "easeIn"
-            self.imageView.animateToNext({
-                
-                
-                self.dismissViewControllerAnimated(false, completion: nil)
-                
+        self.imageView!.animateToNext({
+            self.imageView!.animation = "fadeOut"
+            self.imageView!.duration = 0.4
+            self.imageView!.curve = "easeIn"
+            self.imageView!.animateToNext({
+                self.dismissViewControllerAnimated(true, completion: nil)
+                //self.delegate.updateCollectionView()
             })
         })
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.imageView.animation = "fall"
-        self.imageView.animateFrom = true
-        self.imageView.curve = "easeIn"
-        self.imageView.force = 0.6
-        self.imageView.duration = 0.6
+        self.imageView!.animation = "fall"
+        self.imageView!.animateFrom = true
+        self.imageView!.curve = "easeIn"
+        self.imageView!.force = 0.6
+        self.imageView!.duration = 0.6
       
-        self.imageView.animateToNext({
-            self.imageView.animation = "fadeOut"
-            self.imageView.duration = 0.4
-            self.imageView.curve = "easeIn"
+        self.imageView!.animateToNext({
+            self.imageView!.animation = "fadeOut"
+            self.imageView!.duration = 0.4
+            self.imageView!.curve = "easeIn"
             
-            self.imageView.animateToNext({
+            self.imageView!.animateToNext({
                 
                 UIView.beginAnimations("fade-bg-out", context: nil)
                 UIView.setAnimationDuration(0.2)
@@ -184,14 +160,16 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
                 self.view.backgroundColor = UIColor(red:0.24, green:0.26, blue:0.31, alpha:0.0)
                 UIView.commitAnimations()
                 
-                self.dismissViewControllerAnimated(false, completion: nil)
+                self.dismissViewControllerAnimated(true, completion: nil)
             })
         })
     }
 
     override func prefersStatusBarHidden() -> Bool {
-        return true
+        return false
     }
+    
+
     /*
     // MARK: - Navigation
 
@@ -249,9 +227,7 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
         }
     }
     
-    func gridMenu(menu: CNPGridMenu!, didTapOnItem item: CNPGridMenuItem!) {
-        
-        
+    func gridMenu(menu: CNPGridMenu!, didTapOnItem item: CNPGridMenuItem!) {        
         self.dismissGridMenuAnimated(true) { () -> Void in
             let now = NSDate()
             let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
@@ -261,19 +237,19 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
             
             
                 case "Later Today":
-                //self.setNotification(NSDate().dateByAddingTimeInterval(60.0 * 60.0))
+                    self.createReminder(withDate: NSDate().dateByAddingTimeInterval(60.0 * 60.0))
                 break
                 
                 case "This Evening":
-                // TODO: What if this evening (20:00) has already passed?
-                //components!.hour = 20
-                //self.setNotification((calendar?.dateFromComponents(components!))!)
+                    // TODO: What if this evening (20:00) has already passed?
+                    components!.hour = 20
+                    self.createReminder(withDate: (calendar?.dateFromComponents(components!))!)
                 break
                 
                 case "Tomorrow":
-                // Next occurence of 08:00
-                //components!.hour = 8
-                //self.setNotification((calendar?.nextDateAfterDate(NSDate(), matchingComponents: components!, options: [NSCalendarOptions.MatchNextTimePreservingSmallerUnits]))!)
+                    // Next occurence of 08:00
+                    components!.hour = 8
+                    self.createReminder(withDate:(calendar?.nextDateAfterDate(NSDate(), matchingComponents: components!, options: [NSCalendarOptions.MatchNextTimePreservingSmallerUnits]))!)
                 break
                 
                 case "ThisWeekend":
@@ -300,7 +276,7 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
                 break
                 
                 case "Debug":
-                //self.setNotification(NSDate().dateByAddingTimeInterval(5.0))
+                    self.createReminder(withDate: NSDate().dateByAddingTimeInterval(5.0))
                 break
                 
                 default:
@@ -311,6 +287,41 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
             self.animateAcceptedAndDismiss()
         }
     }
+    
+    func createReminder(withDate date:NSDate) {
+        let newReminder = NSEntityDescription.insertNewObjectForEntityForName("BTTPReminder", inManagedObjectContext: self.managedObjectContext) as! BTTPReminder
+        newReminder.creationDate = NSDate()
+        newReminder.fireDate = date
+        newReminder.image = UIImageJPEGRepresentation(self.image, 1.0)
+        newReminder.assetRef = self.assetRef
+        
+        do {
+            try self.managedObjectContext.save()
+        } catch let error as NSError  {
+            fatalError("Could not save: \(error)")
+        }
 
-
+        /*
+        // persist a representation of this todo item in NSUserDefaults
+        var todoDictionary = NSUserDefaults.standardUserDefaults().dictionaryForKey(ITEMS_KEY) ?? Dictionary() // if todoItems hasn't been set in user defaults, initialize todoDictionary to an empty dictionary using nil-coalescing operator (??)
+        
+        todoDictionary[item.UUID] = ["deadline": item.deadline, "title": item.title, "UUID": item.UUID] // store NSData representation of todo item in dictionary with UUID as key
+        NSUserDefaults.standardUserDefaults().setObject(todoDictionary, forKey: ITEMS_KEY) // save/overwrite todo item list
+        */
+        
+        let notification = UILocalNotification()
+        
+        notification.alertTitle = "Back to the Photo"
+        
+        let emojis = ["⏰", "🎉", "🌈", "🕑", "📷", "⌛️", "🚀", "😺"]
+        let randomIndex = Int(arc4random_uniform(UInt32(emojis.count)))
+        notification.alertBody = "\(emojis[randomIndex]) There's a reminder waiting for you!"
+        
+        notification.fireDate = date
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.userInfo = ["ASSET_REF": self.assetRef, "REMINDER_URI": String(newReminder.objectID.URIRepresentation())]
+        notification.category = "REMINDER_CATEGORY"
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
 }

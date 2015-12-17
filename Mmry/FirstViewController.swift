@@ -11,7 +11,7 @@ import Photos
 import PermissionScope
 import MobileCoreServices
 import ImagePickerSheetController
-
+import CoreData
 
 let ScreenshotCellIdentifier = "SCREENSHOTCELLIDENTIFIER"
 
@@ -21,9 +21,14 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
     @IBOutlet var startImageView:UIImageView?
     @IBOutlet var addButton:UIButton?
     
+    var lastImage:UIImage?
+    var lastImageAssetRef:String?
+    
     var addPhotoController:AddPhotoController?
     var screenshotsCollectionController = ScreenshotsCollectionViewController()
     let pscope = PermissionScope()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,39 +61,20 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         print("didReceiveMemoryWarning()")
-        // Dispose of any resources that can be recreated.
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.Default
     }
     
-    func addNewImage(image:UIImage) {
-        
-        let transition = CATransition()
-        transition.duration = 0.3
-        transition.type = kCATransitionFade
-        
-        self.view.layer.addAnimation(transition, forKey: kCATransition)
-        
-        self.addPhotoController = AddPhotoController(withImage: image)
-        self.addPhotoController?.modalPresentationStyle = .OverFullScreen
-        self.addPhotoController?.modalTransitionStyle = .CrossDissolve
-        //self.presentViewController(self.addPhotoController!, animated: false, completion: )
-        self.presentViewController(self.addPhotoController!, animated: false) { () -> Void in
-            print("Done")
-        }
-        
-    }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         print("Picked image")
         picker.dismissViewControllerAnimated(true, completion: nil)
-        self.setNeedsStatusBarAppearanceUpdate()
-        self.addNewImage(image)
+        self.performSegueWithIdentifier("showAddPhotoSegue", sender: nil)
     }
     
-    @IBAction func addMedia(sender:AnyObject) {
+    @IBAction func showAddPhotoSheet(sender:AnyObject) {
         
         let presentImagePickerController: UIImagePickerControllerSourceType -> () = { source in
             let controller = UIImagePickerController()
@@ -112,13 +98,18 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
                 print("Send \(controller.selectedImageAssets)")
                 
                 let manager = PHImageManager.defaultManager()
-                var option = PHImageRequestOptions()
+                let option = PHImageRequestOptions()
                 var thumbnail = UIImage()
                 option.synchronous = true
                 manager.requestImageForAsset(controller.selectedImageAssets[0], targetSize: CGSize(width: 800.0, height: 8000.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
                     thumbnail = result!
+                    self.lastImage = thumbnail
+                    // Get Ref
+                    
                 })
-                self.addNewImage(thumbnail)
+                
+                self.lastImageAssetRef = controller.selectedImageAssets[0].localIdentifier
+                self.performSegueWithIdentifier("showAddPhotoSegue", sender: nil)
         }))
 
         controller.addAction(ImagePickerAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .Cancel, handler: { _ in
@@ -146,12 +137,6 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
     }
     */
     
-    @IBAction func unwindFromTinyPhotoLibrary(sender: UIStoryboardSegue)
-    {
-        print("unwindFromTinyPhotoLibrary")
-        let sourceViewController = sender.sourceViewController
-        // Pull any data from the view controller which initiated the unwind segue.
-    }
     
     
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
@@ -185,9 +170,24 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "tpl-segue") {
             print("Equals!")
-            var tbl = segue.destinationViewController as! TinyPhotoLibraryViewController 
+            let tbl = segue.destinationViewController as! TinyPhotoLibraryViewController
             tbl.firstViewController = self
+        } else if segue.identifier == "showAddPhotoSegue" {
+         
+            if let controller = segue.destinationViewController as? AddPhotoController {
+                controller.image = self.lastImage
+                controller.assetRef = self.lastImageAssetRef
+                controller.delegate = self
+            }
         }
+    }
+    
+    func testLog() {
+        print("FirstViewController testLog()")
+    }
+    
+    func updateCollectionView(image:UIImage) {
+        //self.screenshotsCollectionController.rel
     }
 
 }

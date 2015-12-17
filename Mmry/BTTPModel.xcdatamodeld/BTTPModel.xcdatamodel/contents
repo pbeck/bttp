@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
+    <entity name="BTTPReminder" representedClassName=".BTTPReminder" syncable="YES">
+        <attribute name="assetRef" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fireDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="hasBeenShown" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BTTPReminder" positionX="-63" positionY="-18" width="128" height="120"/>
+    </elements>
+</model>

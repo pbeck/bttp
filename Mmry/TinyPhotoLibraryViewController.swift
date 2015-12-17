@@ -12,7 +12,7 @@ import Photos
 
 class TinyPhotoLibraryViewController: UIViewController {
     
-    @IBOutlet weak var modalView: SpringView!
+    @IBOutlet  var modalView: SpringView!
     weak var firstViewController:FirstViewController?
     @IBOutlet var stackView: UIStackView?
     
@@ -66,7 +66,7 @@ class TinyPhotoLibraryViewController: UIViewController {
     func tappedPhoto(sender: UITapGestureRecognizer) {
         print("Tapped")
         self.dismissViewControllerAnimated(true) { () -> Void in
-            self.firstViewController!.addNewImage(UIImage(named: "screenshot-imessage-iphone6")!)
+            //self.firstViewController!.addNewImage(UIImage(named: "screenshot-imessage-iphone6")!)
         }
     }
     
