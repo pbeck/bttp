@@ -24,3 +24,4 @@
 ## Links
 
 - OS X Screencast to animated GIF: <https://gist.github.com/dergachev/4627207>
+- Auto increase build number: <http://stackoverflow.com/a/6965086/1145088>

@@ -367,7 +367,6 @@
 				TargetAttributes = {
 					7893A0871D6C384800EA8E54 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = NGB32TH254;
 					};
 					78979C991BC80882003F86BB = {
 						CreatedOnToolsVersion = 7.0;
@@ -708,6 +707,7 @@
 				7893A0961D6C384800EA8E54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78979C951BC80882003F86BB /* Build configuration list for PBXProject "Back to the Photo" */ = {
 			isa = XCConfigurationList;
