@@ -12,10 +12,11 @@ import PermissionScope
 import MobileCoreServices
 import ImagePickerSheetController
 import CoreData
+import DZNEmptyDataSet
 
 let ScreenshotCellIdentifier = "SCREENSHOTCELLIDENTIFIER"
 
-class FirstViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class FirstViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate  {
 
     @IBOutlet var collectionView:UICollectionView?
     @IBOutlet var startImageView:UIImageView?
@@ -56,6 +57,12 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
         
         collectionView?.delegate = self.screenshotsCollectionController
         collectionView?.dataSource = self.screenshotsCollectionController
+        //collectionView?.emptyDataSetDelegate = self
+        //collectionView?.emptyDataSetSource = self
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "start-text")
     }
     
     override func didReceiveMemoryWarning() {

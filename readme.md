@@ -1,12 +1,15 @@
-# Todo for beta
+# Back to the Photo
 
-- ~~Fix display list of screenshots (w/ working pagning)~~ (To be re-worked)
+## Todo for beta
+
+- Fix display list of screenshots (w/ working pagning)
 - Show archive of reminders
 - Fix permissions
-- ~~Where to put access link to expired reminders? In Settings? As toolbar item?~~
+- Where to put access link to expired reminders? In Settings? As toolbar item?~
+- Basic About-page
 
 
-# Todo for release
+## Todo for release
 
 - Copy selected screenshot to app files / icloud (?)
 - Adjust grid menu spacing (more padding to screen left & right)
@@ -14,9 +17,10 @@
 - Working settings
 
 
-#Ideas
+## Ideas
 
 - 3D Touch shortcut for creating reminder from last screenshot
 
-# Links
-https://gist.github.com/dergachev/4627207
+## Links
+
+- OS X Screencast to animated GIF: <https://gist.github.com/dergachev/4627207>

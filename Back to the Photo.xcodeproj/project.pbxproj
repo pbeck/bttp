@@ -18,6 +18,11 @@
 		7876D2EB1C18381200AE2B42 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7876D2E91C1836B500AE2B42 /* CoreMotion.framework */; };
 		789105B11C1845AD008D2D2A /* RootNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789105B01C1845AD008D2D2A /* RootNavController.swift */; };
 		789105B31C185209008D2D2A /* TinyPhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789105B21C185209008D2D2A /* TinyPhotoLibraryViewController.swift */; };
+		7893A0891D6C384800EA8E54 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780C4EC71C1985A800820048 /* NotificationCenter.framework */; };
+		7893A08C1D6C384800EA8E54 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7893A08B1D6C384800EA8E54 /* TodayViewController.swift */; };
+		7893A08F1D6C384800EA8E54 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7893A08D1D6C384800EA8E54 /* MainInterface.storyboard */; };
+		7893A0931D6C384800EA8E54 /* Back to the Photo Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7893A0881D6C384800EA8E54 /* Back to the Photo Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7893A0991D6C406E00EA8E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78979CA61BC80882003F86BB /* Assets.xcassets */; };
 		78979C9E1BC80882003F86BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78979C9D1BC80882003F86BB /* AppDelegate.swift */; };
 		78979CA01BC80882003F86BB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78979C9F1BC80882003F86BB /* FirstViewController.swift */; };
 		78979CA51BC80882003F86BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78979CA31BC80882003F86BB /* Main.storyboard */; };
@@ -61,6 +66,16 @@
 		78E6E5751C0F5B560062929D /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E6E5741C0F5B560062929D /* DatePickerDialog.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7893A0911D6C384800EA8E54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78979C921BC80882003F86BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7893A0871D6C384800EA8E54;
+			remoteInfo = "Back to the Photo Today";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		663C6DFE1C0B393D000CA09C /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -88,6 +103,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				7893A0931D6C384800EA8E54 /* Back to the Photo Today.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,7 +113,6 @@
 /* Begin PBXFileReference section */
 		663C6DFF1C0B4000000CA09C /* ScreenshotsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		663C6E011C0BAF6D000CA09C /* ScreenshotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotCell.swift; sourceTree = "<group>"; };
-		668FEDC61C0E25B800A9F289 /* Mmry-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mmry-Bridging-Header.h"; sourceTree = "<group>"; };
 		668FEDC71C0E25B800A9F289 /* CNPGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPGridMenu.h; sourceTree = "<group>"; };
 		668FEDC81C0E25B800A9F289 /* CNPGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPGridMenu.m; sourceTree = "<group>"; };
 		668FEDCA1C0E51DE00A9F289 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +124,11 @@
 		7876D2E91C1836B500AE2B42 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		789105B01C1845AD008D2D2A /* RootNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavController.swift; sourceTree = "<group>"; };
 		789105B21C185209008D2D2A /* TinyPhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyPhotoLibraryViewController.swift; sourceTree = "<group>"; };
+		7893A0881D6C384800EA8E54 /* Back to the Photo Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Back to the Photo Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7893A08B1D6C384800EA8E54 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		7893A08E1D6C384800EA8E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		7893A0901D6C384800EA8E54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7893A09A1D6C446F00EA8E54 /* BTTP-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BTTP-Bridging-Header.h"; sourceTree = "<group>"; };
 		78979C9A1BC80882003F86BB /* Back to the Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Back to the Photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78979C9D1BC80882003F86BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78979C9F1BC80882003F86BB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +169,7 @@
 		78C2ABD51C22F36C0009B544 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		78C2AC021C22F7420009B544 /* BTTPReminder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BTTPReminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		78C2AC031C22F7420009B544 /* BTTPReminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTPReminder.swift; sourceTree = "<group>"; };
+		78CEA0591C23158A0000D280 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
 		78E49B9F1C16F7AD0007F3DA /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		78E49BA11C170B2B0007F3DA /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		78E6E5721C0F3BE40062929D /* ShowReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowReminderViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +177,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7893A0851D6C384800EA8E54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7893A0891D6C384800EA8E54 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78979C971BC80882003F86BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,16 +199,28 @@
 		668FEDC21C0DEA8900A9F289 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78CEA0591C23158A0000D280 /* DZNEmptyDataSet.framework */,
 				7876D2E91C1836B500AE2B42 /* CoreMotion.framework */,
 				780C4EC71C1985A800820048 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7893A08A1D6C384800EA8E54 /* Back to the Photo Today */ = {
+			isa = PBXGroup;
+			children = (
+				7893A08B1D6C384800EA8E54 /* TodayViewController.swift */,
+				7893A08D1D6C384800EA8E54 /* MainInterface.storyboard */,
+				7893A0901D6C384800EA8E54 /* Info.plist */,
+			);
+			path = "Back to the Photo Today";
+			sourceTree = "<group>";
+		};
 		78979C911BC80882003F86BB = {
 			isa = PBXGroup;
 			children = (
 				78979C9C1BC80882003F86BB /* Back to the Photo */,
+				7893A08A1D6C384800EA8E54 /* Back to the Photo Today */,
 				668FEDC21C0DEA8900A9F289 /* Frameworks */,
 				78979C9B1BC80882003F86BB /* Products */,
 			);
@@ -189,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				78979C9A1BC80882003F86BB /* Back to the Photo.app */,
+				7893A0881D6C384800EA8E54 /* Back to the Photo Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,13 +255,12 @@
 				780C4ED61C19C47300820048 /* DoneHUD.swift */,
 				780C4ED71C19C47300820048 /* DoneView.swift */,
 				789105B01C1845AD008D2D2A /* RootNavController.swift */,
-				668FEDC61C0E25B800A9F289 /* Mmry-Bridging-Header.h */,
+				7893A09A1D6C446F00EA8E54 /* BTTP-Bridging-Header.h */,
 				78C2AC021C22F7420009B544 /* BTTPReminder+CoreDataProperties.swift */,
 				78C2AC031C22F7420009B544 /* BTTPReminder.swift */,
 				78C2ABF31C22F3830009B544 /* Resources */,
 			);
-			name = "Back to the Photo";
-			path = Mmry;
+			path = "Back to the Photo";
 			sourceTree = "<group>";
 		};
 		78C2ABB71C22F36C0009B544 /* Spring */ = {
@@ -275,6 +316,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7893A0871D6C384800EA8E54 /* Back to the Photo Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7893A0941D6C384800EA8E54 /* Build configuration list for PBXNativeTarget "Back to the Photo Today" */;
+			buildPhases = (
+				7893A0841D6C384700EA8E54 /* Sources */,
+				7893A0851D6C384800EA8E54 /* Frameworks */,
+				7893A0861D6C384800EA8E54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Back to the Photo Today";
+			productName = "Back to the Photo Today";
+			productReference = 7893A0881D6C384800EA8E54 /* Back to the Photo Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		78979C991BC80882003F86BB /* Back to the Photo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78979CAE1BC80882003F86BB /* Build configuration list for PBXNativeTarget "Back to the Photo" */;
@@ -290,6 +348,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7893A0921D6C384800EA8E54 /* PBXTargetDependency */,
 			);
 			name = "Back to the Photo";
 			productName = Mmry;
@@ -306,6 +365,10 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Beckman Creative";
 				TargetAttributes = {
+					7893A0871D6C384800EA8E54 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = NGB32TH254;
+					};
 					78979C991BC80882003F86BB = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = NGB32TH254;
@@ -331,11 +394,21 @@
 			projectRoot = "";
 			targets = (
 				78979C991BC80882003F86BB /* Back to the Photo */,
+				7893A0871D6C384800EA8E54 /* Back to the Photo Today */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7893A0861D6C384800EA8E54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7893A0991D6C406E00EA8E54 /* Assets.xcassets in Resources */,
+				7893A08F1D6C384800EA8E54 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78979C981BC80882003F86BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,12 +427,13 @@
 /* Begin PBXShellScriptBuildPhase section */
 		668FEDC31C0DEAA500A9F289 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/PermissionScope.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ImagePickerSheetController.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DZNEmptyDataSet.framework",
 			);
 			outputPaths = (
 			);
@@ -370,6 +444,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7893A0841D6C384700EA8E54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7893A08C1D6C384800EA8E54 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78979C961BC80882003F86BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -424,7 +506,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7893A0921D6C384800EA8E54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7893A0871D6C384800EA8E54 /* Back to the Photo Today */;
+			targetProxy = 7893A0911D6C384800EA8E54 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		7893A08D1D6C384800EA8E54 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7893A08E1D6C384800EA8E54 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		78979CA31BC80882003F86BB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,6 +542,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7893A0951D6C384800EA8E54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Back to the Photo Today/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "se.beckmancreative.bttp.Back-to-the-Photo-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7893A0961D6C384800EA8E54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Back to the Photo Today/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "se.beckmancreative.bttp.Back-to-the-Photo-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		78979CAC1BC80882003F86BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -533,17 +659,18 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Mmry/Info.plist;
+				INFOPLIST_FILE = "Back to the Photo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.bttp;
 				PRODUCT_NAME = "Back to the Photo";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Mmry/Mmry-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Back to the Photo/BTTP-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -556,23 +683,32 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Mmry/Info.plist;
+				INFOPLIST_FILE = "Back to the Photo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = se.beckmancreative.bttp;
 				PRODUCT_NAME = "Back to the Photo";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Mmry/Mmry-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Back to the Photo/BTTP-Bridging-Header.h";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7893A0941D6C384800EA8E54 /* Build configuration list for PBXNativeTarget "Back to the Photo Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7893A0951D6C384800EA8E54 /* Debug */,
+				7893A0961D6C384800EA8E54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		78979C951BC80882003F86BB /* Build configuration list for PBXProject "Back to the Photo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -212,7 +212,7 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
         debug5secs.title = "Debug"
         
         
-        let gridMenu = CNPGridMenu(menuItems:[laterToday, thisEvening, tomorrow, thisWeekend, nextWeek, debug5secs])
+        let gridMenu = CNPGridMenu(menuItems:[laterToday, thisEvening, tomorrow, debug5secs])
         gridMenu.delegate = self
         
         self.presentGridMenu(gridMenu, animated: true) { () -> Void in
@@ -313,7 +313,7 @@ class AddPhotoController: UIViewController, CNPGridMenuDelegate {
         
         notification.alertTitle = "Back to the Photo"
         
-        let emojis = ["⏰", "🎉", "🌈", "🕑", "📷", "⌛️", "🚀", "😺"]
+        let emojis = ["⏰", "🎉", "🕑", "📷", "⌛️", "🚀", "🏞", "🌅", "🏝"]
         let randomIndex = Int(arc4random_uniform(UInt32(emojis.count)))
         notification.alertBody = "\(emojis[randomIndex]) There's a reminder waiting for you!"
         

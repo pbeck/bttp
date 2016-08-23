@@ -9,16 +9,13 @@
 import Foundation
 import UIKit
 import Photos
+import DZNEmptyDataSet
 
-class ScreenshotsCollectionViewController: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, CNPGridMenuDelegate {
+class ScreenshotsCollectionViewController: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
 
     struct BCShot {
-        var creationDate = NSDate()
         var reminderDate = NSDate()
-        //var haveNotified:Bool = false
-        //var asset:PHAsset
-        //var imageUrl:
-        var UUID:NSUUID
+        var image:UIImage!
     }
     
     var data:[BCShot] = []
@@ -34,6 +31,10 @@ class ScreenshotsCollectionViewController: NSObject, UICollectionViewDelegate, U
     
     func setup() {
         //self.buildScreenshotList()
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "start-text")
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -101,7 +102,7 @@ class ScreenshotsCollectionViewController: NSObject, UICollectionViewDelegate, U
                     
                     if(isSimulator) {
                         if asset.pixelWidth == 750 && asset.pixelHeight == 1334 {
-                            //self.data.append(BCShot(creationDate: NSDate(), haveNotified: false, asset: asset, UUID: NSUUID()))
+                            //self.data.append(BCShot(reminderDate: NSDate(), haveNotified: false, asset: asset, UUID: NSUUID()))
                         }
                     }
                     else {
@@ -120,16 +121,6 @@ class ScreenshotsCollectionViewController: NSObject, UICollectionViewDelegate, U
         } else {
             fatalError("No screenshots")
         }
-    }
-
-        
-    func hasThisBeenNotified(date: NSDate) -> Bool {
-        for shot in data {
-            if shot.creationDate.compare(date) == NSComparisonResult.OrderedSame {
-                return true
-            }
-        }
-        return false
     }
 
     func insertPhoto(image:UIImage) {

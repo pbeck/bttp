@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="z1E-d6-wkV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="z1E-d6-wkV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -37,6 +37,7 @@
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cI3-vN-Mh4" customClass="DesignableButton" customModule="Back_to_the_Photo" customModuleProvider="target">
                                 <rect key="frame" x="263" y="549" width="96" height="34"/>
+                                <animations/>
                                 <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
                                 <state key="normal" title="Add Photo">
                                     <color key="titleColor" red="0.44867750989999999" green="0.77946472170000003" blue="0.67262018290000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,6 +59,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDB-1t-jmH">
                                 <rect key="frame" x="16" y="551" width="112" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Last Screenshot"/>
                                 <connections>
                                     <segue destination="FFD-sd-Fki" kind="presentation" identifier="showAddPhotoSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="8k5-wH-2B9"/>
@@ -65,7 +67,7 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mfn-YR-adh" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="2Tw-SR-un1"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="cI3-vN-Mh4" secondAttribute="bottom" constant="20" id="3t1-be-QkX"/>
@@ -156,6 +158,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Only screenshots in QuickAdd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ino-iD-0zQ">
                                                     <rect key="frame" x="15" y="5" width="218" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -163,12 +166,15 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Setting disabled in beta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lqk-cg-pr0">
                                                     <rect key="frame" x="15" y="25" width="125" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <outlet property="accessoryView" destination="K13-wS-cuf" id="V5E-vl-zrD"/>
                                         </connections>
@@ -191,6 +197,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Setting disabled in beta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kgg-MW-l34">
                                                     <rect key="frame" x="15" y="25" width="125" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -228,6 +235,7 @@
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="sample-881-globe" id="igs-9F-rju">
                                                     <rect key="frame" x="15" y="7" width="28" height="28"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <animations/>
                                                 </imageView>
                                             </subviews>
                                             <animations/>
@@ -256,6 +264,7 @@
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="sample-908-target" id="1WE-n4-mZn">
                                                     <rect key="frame" x="15" y="7" width="28" height="28"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <animations/>
                                                 </imageView>
                                             </subviews>
                                             <animations/>
@@ -289,14 +298,17 @@
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="CKp-2W-fEK" userLabel="Switch - Screenshots">
                     <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
                 </switch>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Uv6-aw-obP" userLabel="Switch - Camera">
                     <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
                 </switch>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="K13-wS-cuf" userLabel="Switch - QuickAdd">
                     <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
                 </switch>
             </objects>
             <point key="canvasLocation" x="1141.5" y="-872.5"/>
@@ -315,10 +327,12 @@
                         <subviews>
                             <webView contentMode="scaleToFill" allowsInlineMediaPlayback="NO" mediaPlaybackRequiresUserAction="NO" mediaPlaybackAllowsAirPlay="NO" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8o-Dc-hUB">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
                             </webView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="U8o-Dc-hUB" firstAttribute="top" secondItem="HsD-yI-Hz5" secondAttribute="bottom" id="1UX-Zz-N2p"/>
@@ -351,6 +365,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYX-3A-4vV">
                                 <rect key="frame" x="322" y="629" width="37" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="doneButtonPress" destination="8VE-8L-q9l" eventType="touchUpInside" id="Km4-Bz-ngt"/>
@@ -358,18 +373,22 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0b-lL-00i">
                                 <rect key="frame" x="16" y="629" width="153" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Remind me again later"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set to 2015-06-15 08:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07b-pz-Oaf">
                                 <rect key="frame" x="116" y="20" width="142" height="15"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wv8-Yk-s6O">
                                 <rect key="frame" x="0.0" y="63" width="375" height="558"/>
+                                <animations/>
                             </imageView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.51023065476190477" green="0.51023065476190477" blue="0.51023065476190477" alpha="0.82000000000000006" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wv8-Yk-s6O" firstAttribute="trailing" secondItem="YYX-3A-4vV" secondAttribute="trailing" id="0fc-8f-1qX"/>
@@ -419,11 +438,13 @@
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="waJ-zR-1jl">
                                                 <rect key="frame" x="0.0" y="10" width="375" height="230"/>
+                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="230" id="GBk-3l-B8y"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstItem="waJ-zR-1jl" firstAttribute="centerX" secondItem="qZH-iW-eck" secondAttribute="centerX" id="8eL-Bw-xe3"/>
                                             <constraint firstItem="waJ-zR-1jl" firstAttribute="leading" secondItem="qZH-iW-eck" secondAttribute="leading" id="CJW-ZF-Mku"/>
@@ -434,6 +455,7 @@
                                         </constraints>
                                     </scrollView>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="qZH-iW-eck" secondAttribute="trailing" id="0Np-c8-hB1"/>
@@ -452,6 +474,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HrP-09-J14">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="440"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="440" id="Agp-2e-Sz0"/>
@@ -462,6 +485,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TpS-xt-WPw" firstAttribute="leading" secondItem="7py-cM-nHP" secondAttribute="leading" id="1wZ-Wl-B49"/>
@@ -507,19 +531,23 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Jl-CH-4My" customClass="SpringImageView" customModule="Back_to_the_Photo" customModuleProvider="target">
                                 <rect key="frame" x="57" y="80" width="260" height="508"/>
+                                <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwP-5f-oDO">
                                 <rect key="frame" x="20" y="617" width="153" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Remind me again later"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQ1-wG-6qC">
                                 <rect key="frame" x="275" y="617" width="80" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="doneButtonPress" destination="8VE-8L-q9l" eventType="touchUpInside" id="hqW-2b-YWx"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.41503389550264547" green="0.41503389550264547" blue="0.41503389550264547" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="tQ1-wG-6qC" secondAttribute="trailing" id="4hg-z4-OrT"/>
